@@ -1,0 +1,17 @@
+<package>
+  <description brief="epoc">
+
+     epoc
+
+  </description>
+  <author>Carlos Antonio Bulnes Domínguez</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/epoc</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
+
+

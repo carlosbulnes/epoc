@@ -3,6 +3,7 @@ import roslib; roslib.load_manifest('epoc')
 from epoc.srv import *
 import rospy
 
+import time
 import numpy as np 
 import matplotlib.pyplot as plt
 
@@ -11,8 +12,9 @@ def grafica_frecuencias(request):
 	tiempo = []
 	tiempo.extend(range(14))
 	print "Frecuencias: ", frecuencias
-	plt.plot(tiempo, frecuencias)
-	plt.show()
+	plt.scatter(tiempo, frecuencias)
+	plt.draw()
+	time.sleep(0.1)
 
 	return FrecuenciasResponse(0)
 
@@ -23,4 +25,6 @@ def recibe_frecuencias():
 	rospy.spin()
 
 if __name__ == "__main__":
+	plt.ion()
+	plt.show()
 	recibe_frecuencias()

@@ -4,7 +4,6 @@ from epoc.srv import *
 import rospy
 
 import time
-import numpy as np 
 import matplotlib.pyplot as plt
 
 def grafica_frecuencias(request):

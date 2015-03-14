@@ -12,7 +12,7 @@ def envia_frecuencias(f):
 	rospy.wait_for_service('transmite_frecuencias')
 	try:
 		transmite_frecuencias = rospy.ServiceProxy('transmite_frecuencias', Frecuencias)
-		
+		print 'Enviando...'
 		result = transmite_frecuencias(f)
 		return result.a
 	except rospy.ServiceException, e:

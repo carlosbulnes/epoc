@@ -15,17 +15,17 @@ class ROS(GUIForm):
 	def grafica_frecuencias(self, request):
 		frecuencias = request.sen
 		#frecuencias_lista = []
-		frecuencias_lista = list(frecuencias)
+		self.gui.frecuencias = list(frecuencias)
 		#tiempo = []
 		#tiempo.extend(range(14))
 
-		print "Frecuencias: ", frecuencias
+		#print "Frecuencias: ", frecuencias
 		#print 'Objeto gui enviado: ', self.gui
-		self.gui.graficar(self.gui, frecuencias_lista)
+		#self.gui.graficar(self.gui, frecuencias_lista)
 		#GUIForm.PlotFunc(frecuencias)
-		#gui.ui.widget.canvas.ax.clear()
-		#gui.ui.widget.canvas.ax.plot(frecuencias)
-		#gui.ui.widget.canvas.draw()
+		self.gui.ui.widget.canvas.ax.clear()
+		self.gui.ui.widget.canvas.ax.plot(frecuencias)
+		self.gui.ui.widget.canvas.draw()
 	 
 		#plt.scatter(tiempo, frecuencias)
 		#plt.draw()
@@ -35,8 +35,8 @@ class ROS(GUIForm):
 
 	def recibe_frecuencias(self, gui):
 		rospy.init_node('recibe_frecuencias_server')
-		#print 'porcesando recibe_frecuencias'
-		#raw_input()
+		print 'porcesando recibe_frecuencias'
+		#raw_input('Enter para iniciar...')
 		s = rospy.Service('transmite_frecuencias', Frecuencias, self.grafica_frecuencias)
 		print 'En la espera de frecuencias...'
 		rospy.spin()

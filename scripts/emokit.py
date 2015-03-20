@@ -24,7 +24,7 @@ if __name__ == "__main__":
     #frecuencias = [12.31, 32.21, 3.123, 2.54, 0.123, 1.331, 0.313,
     #			   12.41, 31.41, 1.232, 9.15, 1.004, 3.123, 12.31]
 	
-    for i in range(100):
+    for i in range(1000):
     	frecuencias = []
     	for j in range(14):
     		frecuencias.append(np.random.random())

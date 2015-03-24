@@ -2,12 +2,13 @@
 
 import matplotlib.pyplot as plt
 import sys
-from multiprocessing import *
+#from multiprocessing import *
+import threading
 
 from EpocGUI import *
 from rosServer import *
 
-pool = Pool(processes=2)
+#pool = Pool(processes=2)
 
 class GUIForm(QtGui.QWidget):
  
@@ -45,27 +46,27 @@ if __name__ == "__main__":
 
     app = QtGui.QApplication(sys.argv)
     myapp = GUIForm()
-    #myapp.show()
+    myapp.show()
     globalGUI = myapp
     
-    pool.apply_async(myapp.ros.recibe_frecuencias, (myapp))
-    pool.apply_async(runGUI, (app))
+    #pool.apply_async(myapp.ros.recibe_frecuencias, (myapp))
+    #pool.apply_async(runGUI, (app))
     #pool.close()
     #pool.join()
 
-    #threads = list()
+    threads = list()
     #t = threading.Thread(target=myapp.ros.recibe_frecuencias(myapp))
-    #server = threading.Thread(target=myapp.ros.recibe_frecuencias(myapp))
+    server = threading.Thread(target=myapp.ros.recibe_frecuencias(myapp))
     #server = Process(target=myapp.ros.recibe_frecuencias(myapp))
-    #threads.append(t)
-    #gui = threading.Thread(target=sys.exit(app.exec_()))
+    threads.append(server)
+    gui = threading.Thread(target=sys.exit(app.exec_()))
     #gui = Process(target=sys.exit(app.exec_()))
-    #threads.append(t)
+    threads.append(gui)
     #print threads
     #raw_input()
 
-    #server.start()
-    #gui.start()
+    server.start()
+    gui.start()
     #pool.join()
 
     #myapp.ros.recibe_frecuencias(myapp)      

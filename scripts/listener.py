@@ -83,7 +83,7 @@ class GUIForm(QtGui.QWidget):
         # name for our 'talker' node so that multiple talkers can
         # run simultaneously.
         print 'iniciando listener'
-        rospy.init_node('listener', anonymous=True)
+        rospy.init_node('listener', anonymous=True, disable_signals=False)
 
         rospy.Subscriber("chatter", String, self.callback)
 

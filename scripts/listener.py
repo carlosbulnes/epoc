@@ -55,6 +55,7 @@ class GUIForm(QtGui.QWidget):
         #raw_input()
         #ros.recibe_frecuencias2()
         QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.playGraph)
+        QtCore.QObject.connect(self.ui.stopButton, QtCore.SIGNAL('clicked()'), self.stop_service)
 
     def playGraph(self):
         self.listener()
@@ -64,13 +65,15 @@ class GUIForm(QtGui.QWidget):
 
     def graficar(self, gui, frecuencias):
         #print 'comienza a graficar valores: ', frecuencias
-        print 'Objeto recibido', gui
+        #print 'Objeto recibido', gui
         #randomNumbers = random.sample(range(0, 10), 10)
         gui.ui.widget.canvas.ax.clear()
         gui.ui.widget.canvas.ax.plot(frecuencias)
         gui.ui.widget.canvas.draw()
-        print 'termina de graficar'
+        #print 'termina de graficar'
 
+    def stop_service(self):
+     rospy.signal_shutdown("Se presiono el boton detener")
 
     def callback(self, data):
         rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
@@ -82,7 +85,6 @@ class GUIForm(QtGui.QWidget):
         # anonymous=True flag means that rospy will choose a unique
         # name for our 'talker' node so that multiple talkers can
         # run simultaneously.
-        print 'iniciando listener'
         rospy.init_node('listener', anonymous=True, disable_signals=False)
 
         rospy.Subscriber("chatter", String, self.callback)

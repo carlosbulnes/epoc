@@ -58,7 +58,10 @@ class GUIForm(QtGui.QWidget):
         QtCore.QObject.connect(self.ui.stopButton, QtCore.SIGNAL('clicked()'), self.stop_service)
 
     def playGraph(self):
+        """ Activa la comunicación ROS """
         self.listener()
+        self.ui.playButton.setEnable(False) # Inhabilita el botón para evitar multiples invocaciones al servidor.
+        self.ui.stopButton.setEnable(True) # Habilita el botón de Stop
         print "Frecuencias: ", self.frecuencias
         #self.ros.recibe_frecuencias(self)
         pass
@@ -74,6 +77,8 @@ class GUIForm(QtGui.QWidget):
 
     def stop_service(self):
      rospy.signal_shutdown("Se presiono el boton detener")
+     self.ui.playButton.setEnable(True) # Reactiva el botón de Play para poder volver a iniciar el servidor.
+     self.ui.stopButton.setEnable(False) # Inhabilita el boton de Stop
 
     def callback(self, data):
         rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)

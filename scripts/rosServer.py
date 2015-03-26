@@ -39,7 +39,7 @@ class ROS(GUIForm):
 		#raw_input('Enter para iniciar...')
 		s = rospy.Service('transmite_frecuencias', Frecuencias, self.grafica_frecuencias)
 		print 'En la espera de frecuencias...'
-		rospy.spin()
+		#rospy.spin()
 
 
 

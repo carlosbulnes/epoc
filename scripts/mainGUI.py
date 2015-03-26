@@ -18,7 +18,7 @@ class GUIForm(QtGui.QWidget):
         self.ui.setupUi(self)
         #self.recibe_frecuencias(self)
         #print 'Creando objeto de ROS'
-        #self.ros = ROS(self)
+        self.ros = ROS(self)
         self.frecuencias = []
         #print 'Objeto ros creado'
         #raw_input()

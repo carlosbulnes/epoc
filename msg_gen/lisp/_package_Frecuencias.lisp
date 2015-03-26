@@ -1,5 +1,7 @@
 (cl:in-package epoc-msg)
-(cl:export '(SEN1-VAL
+(cl:export '(HEADER-VAL
+          HEADER
+          SEN1-VAL
           SEN1
           SEN2-VAL
           SEN2

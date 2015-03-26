@@ -47,6 +47,7 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/epoc/Frecuencias.h
 ../msg_gen/cpp/include/epoc/Frecuencias.h: ../msg/Frecuencias.msg
 ../msg_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
 ../msg_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roslib/bin/gendeps
+../msg_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
 ../msg_gen/cpp/include/epoc/Frecuencias.h: ../manifest.xml
 ../msg_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
 ../msg_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roslang/manifest.xml

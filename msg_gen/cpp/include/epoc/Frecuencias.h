@@ -14,6 +14,7 @@
 
 #include "ros/assert.h"
 
+#include "std_msgs/Header.h"
 
 namespace epoc
 {
@@ -22,7 +23,8 @@ struct Frecuencias_ {
   typedef Frecuencias_<ContainerAllocator> Type;
 
   Frecuencias_()
-  : sen1(0.0)
+  : header()
+  , sen1(0.0)
   , sen2(0.0)
   , sen3(0.0)
   , sen4(0.0)
@@ -40,7 +42,8 @@ struct Frecuencias_ {
   }
 
   Frecuencias_(const ContainerAllocator& _alloc)
-  : sen1(0.0)
+  : header(_alloc)
+  , sen1(0.0)
   , sen2(0.0)
   , sen3(0.0)
   , sen4(0.0)
@@ -56,6 +59,9 @@ struct Frecuencias_ {
   , sen14(0.0)
   {
   }
+
+  typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
+   ::std_msgs::Header_<ContainerAllocator>  header;
 
   typedef double _sen1_type;
   double sen1;
@@ -128,12 +134,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::epoc::Frecuencias_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "d0613b2dd48ef9386b459a8613f058ce";
+    return "2d9a8c66cef9133b256ea9a7407bf26a";
   }
 
   static const char* value(const  ::epoc::Frecuencias_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0xd0613b2dd48ef938ULL;
-  static const uint64_t static_value2 = 0x6b459a8613f058ceULL;
+  static const uint64_t static_value1 = 0x2d9a8c66cef9133bULL;
+  static const uint64_t static_value2 = 0x256ea9a7407bf26aULL;
 };
 
 template<class ContainerAllocator>
@@ -150,7 +156,8 @@ template<class ContainerAllocator>
 struct Definition< ::epoc::Frecuencias_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "float64 sen1\n\
+    return "Header header\n\
+float64 sen1\n\
 float64 sen2\n\
 float64 sen3\n\
 float64 sen4\n\
@@ -164,6 +171,23 @@ float64 sen11\n\
 float64 sen12\n\
 float64 sen13\n\
 float64 sen14\n\
+================================================================================\n\
+MSG: std_msgs/Header\n\
+# Standard metadata for higher-level stamped data types.\n\
+# This is generally used to communicate timestamped data \n\
+# in a particular coordinate frame.\n\
+# \n\
+# sequence ID: consecutively increasing ID \n\
+uint32 seq\n\
+#Two-integer timestamp that is expressed as:\n\
+# * stamp.secs: seconds (stamp_secs) since epoch\n\
+# * stamp.nsecs: nanoseconds since stamp_secs\n\
+# time-handling sugar is provided by the client library\n\
+time stamp\n\
+#Frame this data is associated with\n\
+# 0: no frame\n\
+# 1: global frame\n\
+string frame_id\n\
 \n\
 ";
   }
@@ -171,7 +195,8 @@ float64 sen14\n\
   static const char* value(const  ::epoc::Frecuencias_<ContainerAllocator> &) { return value(); } 
 };
 
-template<class ContainerAllocator> struct IsFixedSize< ::epoc::Frecuencias_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct HasHeader< ::epoc::Frecuencias_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct HasHeader< const ::epoc::Frecuencias_<ContainerAllocator> > : public TrueType {};
 } // namespace message_traits
 } // namespace ros
 
@@ -184,6 +209,7 @@ template<class ContainerAllocator> struct Serializer< ::epoc::Frecuencias_<Conta
 {
   template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
   {
+    stream.next(m.header);
     stream.next(m.sen1);
     stream.next(m.sen2);
     stream.next(m.sen3);
@@ -215,6 +241,9 @@ struct Printer< ::epoc::Frecuencias_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const  ::epoc::Frecuencias_<ContainerAllocator> & v) 
   {
+    s << indent << "header: ";
+s << std::endl;
+    Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "sen1: ";
     Printer<double>::stream(s, indent + "  ", v.sen1);
     s << indent << "sen2: ";

@@ -3,7 +3,6 @@
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/ROSBUILD_genmsg_py.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
-/home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/ROSBUILD_gensrv_py.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/clean-test-results.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/rosbuild_precompile.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/rosbuild_premsgsrvgen.dir
@@ -11,7 +10,6 @@
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/rospack_genmsg_all.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/rospack_genmsg_libexe.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/rospack_gensrv.dir
-/home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/rospack_gensrv_all.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/test.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/test-future.dir
 /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles/test-results.dir

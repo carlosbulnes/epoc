@@ -38,23 +38,63 @@
 
 import rospy
 from std_msgs.msg import String
+from EpocGUI import *
+import sys
 
-def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+class GUIForm(QtGui.QWidget):
+ 
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self,parent)
+        self.ui = Ui_EpocGUI()
+        self.ui.setupUi(self)
+        #self.recibe_frecuencias(self)
+        #print 'Creando objeto de ROS'
+        #self.ros = ROS(self)
+        self.frecuencias = []
+        #print 'Objeto ros creado'
+        #raw_input()
+        #ros.recibe_frecuencias2()
+        QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.playGraph)
 
-def listener():
+    def playGraph(self):
+        self.listener()
+        print "Frecuencias: ", self.frecuencias
+        #self.ros.recibe_frecuencias(self)
+        pass
 
-    # In ROS, nodes are uniquely named. If two nodes with the same
-    # node are launched, the previous one is kicked off. The
-    # anonymous=True flag means that rospy will choose a unique
-    # name for our 'talker' node so that multiple talkers can
-    # run simultaneously.
-    rospy.init_node('listener', anonymous=True)
+    def graficar(self, gui, frecuencias):
+        #print 'comienza a graficar valores: ', frecuencias
+        print 'Objeto recibido', gui
+        #randomNumbers = random.sample(range(0, 10), 10)
+        gui.ui.widget.canvas.ax.clear()
+        gui.ui.widget.canvas.ax.plot(frecuencias)
+        gui.ui.widget.canvas.draw()
+        print 'termina de graficar'
 
-    rospy.Subscriber("chatter", String, callback)
 
-    # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+    def callback(self, data):
+        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+
+    def listener(self):
+
+        # In ROS, nodes are uniquely named. If two nodes with the same
+        # node are launched, the previous one is kicked off. The
+        # anonymous=True flag means that rospy will choose a unique
+        # name for our 'talker' node so that multiple talkers can
+        # run simultaneously.
+        print 'iniciando listener'
+        rospy.init_node('listener', anonymous=True)
+
+        rospy.Subscriber("chatter", String, self.callback)
+
+        # spin() simply keeps python from exiting until this node is stopped
+        #rospy.spin()
 
 if __name__ == '__main__':
-    listener()
+ 
+    app = QtGui.QApplication(sys.argv)
+    myapp = GUIForm()
+    myapp.show()
+    globalGUI = myapp   
+    sys.exit(app.exec_())
+    #listener()

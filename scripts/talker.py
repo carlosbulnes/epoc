@@ -37,16 +37,22 @@
 ## to the 'chatter' topic
 
 import rospy
-from std_msgs.msg import String
+#from std_msgs.msg import String
+import roslib; roslib.load_manifest('epoc')
+from epoc.msg import Frecuencias
 
 def talker():
-    pub = rospy.Publisher('chatter', String) #, queue_size=10)
-    rospy.init_node('talker', anonymous=True)
+    pub = rospy.Publisher('mensaje', Frecuencias) #, queue_size=10)
+    #pub = rospy.Publisher('Senales', float[14]) #, queue_size=10)
+    rospy.init_node('talker', anonymous=True, disable_signals=False)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        hello_str = "hello world %s" % rospy.get_time()
+        #hello_str = "hello world %s" % rospy.get_time()
+        hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
-        pub.publish(hello_str)
+        #pub.publish(hello_str)
+        frecuencias = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+        pub.publish(frecuencias)
         rate.sleep()
 
 if __name__ == '__main__':

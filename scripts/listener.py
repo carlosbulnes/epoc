@@ -37,7 +37,8 @@
 ## to the 'chatter' topic
 
 import rospy
-from std_msgs.msg import String
+import roslib; roslib.load_manifest('epoc')
+from epoc.msg import Frecuencias
 from EpocGUI import *
 import sys
 
@@ -54,34 +55,39 @@ class GUIForm(QtGui.QWidget):
         #print 'Objeto ros creado'
         #raw_input()
         #ros.recibe_frecuencias2()
+        #self.listener()
+        #QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.playGraph)
         QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.playGraph)
         QtCore.QObject.connect(self.ui.stopButton, QtCore.SIGNAL('clicked()'), self.stop_service)
 
     def playGraph(self):
-        """ Activa la comunicación ROS """
+        """ Activa la comunicacion ROS """
         self.listener()
-        self.ui.playButton.setEnable(False) # Inhabilita el botón para evitar multiples invocaciones al servidor.
-        self.ui.stopButton.setEnable(True) # Habilita el botón de Stop
-        print "Frecuencias: ", self.frecuencias
+        #self.ui.playButton.setEnable(False) # Inhabilita el boton para evitar multiples invocaciones al servidor.
+        #self.ui.stopButton.setEnable(True) # Habilita el boton de Stop
+        #print "Frecuencias: ", self.frecuencias
         #self.ros.recibe_frecuencias(self)
-        pass
 
-    def graficar(self, gui, frecuencias):
+    def graficar(self, frecuencias):
         #print 'comienza a graficar valores: ', frecuencias
         #print 'Objeto recibido', gui
         #randomNumbers = random.sample(range(0, 10), 10)
-        gui.ui.widget.canvas.ax.clear()
-        gui.ui.widget.canvas.ax.plot(frecuencias)
-        gui.ui.widget.canvas.draw()
+        self.ui.widget.canvas.ax.clear()
+        self.ui.widget.canvas.ax.plot(frecuencias)
+        self.ui.widget.canvas.draw()
         #print 'termina de graficar'
 
     def stop_service(self):
-     rospy.signal_shutdown("Se presiono el boton detener")
-     self.ui.playButton.setEnable(True) # Reactiva el botón de Play para poder volver a iniciar el servidor.
-     self.ui.stopButton.setEnable(False) # Inhabilita el boton de Stop
+        rospy.signal_shutdown("Se presiono el boton detener")
+        
+        #self.ui.playButton.setEnable(True) # Reactiva el boton de Play para poder volver a iniciar el servidor.
+        #self.ui.stopButton.setEnable(False) # Inhabilita el boton de Stop
 
     def callback(self, data):
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+        self.graficar(data.datos)
+        #print 'Senales: ', self.frecuencias
+        #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
 
     def listener(self):
 
@@ -92,7 +98,9 @@ class GUIForm(QtGui.QWidget):
         # run simultaneously.
         rospy.init_node('listener', anonymous=True, disable_signals=False)
 
-        rospy.Subscriber("chatter", String, self.callback)
+        rospy.Subscriber("mensaje", Frecuencias, self.callback)
+        #print 'comunicacion iniciada'
+        #raw_input()
 
         # spin() simply keeps python from exiting until this node is stopped
         #rospy.spin()

@@ -14,7 +14,6 @@
 
 #include "ros/assert.h"
 
-#include "std_msgs/Header.h"
 
 namespace epoc
 {
@@ -23,87 +22,19 @@ struct Frecuencias_ {
   typedef Frecuencias_<ContainerAllocator> Type;
 
   Frecuencias_()
-  : header()
-  , sen1(0.0)
-  , sen2(0.0)
-  , sen3(0.0)
-  , sen4(0.0)
-  , sen5(0.0)
-  , sen6(0.0)
-  , sen7(0.0)
-  , sen8(0.0)
-  , sen9(0.0)
-  , sen10(0.0)
-  , sen11(0.0)
-  , sen12(0.0)
-  , sen13(0.0)
-  , sen14(0.0)
+  : datos()
   {
+    datos.assign(0.0);
   }
 
   Frecuencias_(const ContainerAllocator& _alloc)
-  : header(_alloc)
-  , sen1(0.0)
-  , sen2(0.0)
-  , sen3(0.0)
-  , sen4(0.0)
-  , sen5(0.0)
-  , sen6(0.0)
-  , sen7(0.0)
-  , sen8(0.0)
-  , sen9(0.0)
-  , sen10(0.0)
-  , sen11(0.0)
-  , sen12(0.0)
-  , sen13(0.0)
-  , sen14(0.0)
+  : datos()
   {
+    datos.assign(0.0);
   }
 
-  typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
-   ::std_msgs::Header_<ContainerAllocator>  header;
-
-  typedef double _sen1_type;
-  double sen1;
-
-  typedef double _sen2_type;
-  double sen2;
-
-  typedef double _sen3_type;
-  double sen3;
-
-  typedef double _sen4_type;
-  double sen4;
-
-  typedef double _sen5_type;
-  double sen5;
-
-  typedef double _sen6_type;
-  double sen6;
-
-  typedef double _sen7_type;
-  double sen7;
-
-  typedef double _sen8_type;
-  double sen8;
-
-  typedef double _sen9_type;
-  double sen9;
-
-  typedef double _sen10_type;
-  double sen10;
-
-  typedef double _sen11_type;
-  double sen11;
-
-  typedef double _sen12_type;
-  double sen12;
-
-  typedef double _sen13_type;
-  double sen13;
-
-  typedef double _sen14_type;
-  double sen14;
+  typedef boost::array<double, 14>  _datos_type;
+  boost::array<double, 14>  datos;
 
 
   typedef boost::shared_ptr< ::epoc::Frecuencias_<ContainerAllocator> > Ptr;
@@ -134,12 +65,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::epoc::Frecuencias_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "2d9a8c66cef9133b256ea9a7407bf26a";
+    return "3cc745c08934b0cd21fbac2bdbf11b12";
   }
 
   static const char* value(const  ::epoc::Frecuencias_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0x2d9a8c66cef9133bULL;
-  static const uint64_t static_value2 = 0x256ea9a7407bf26aULL;
+  static const uint64_t static_value1 = 0x3cc745c08934b0cdULL;
+  static const uint64_t static_value2 = 0x21fbac2bdbf11b12ULL;
 };
 
 template<class ContainerAllocator>
@@ -156,47 +87,14 @@ template<class ContainerAllocator>
 struct Definition< ::epoc::Frecuencias_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "Header header\n\
-float64 sen1\n\
-float64 sen2\n\
-float64 sen3\n\
-float64 sen4\n\
-float64 sen5\n\
-float64 sen6\n\
-float64 sen7\n\
-float64 sen8\n\
-float64 sen9\n\
-float64 sen10\n\
-float64 sen11\n\
-float64 sen12\n\
-float64 sen13\n\
-float64 sen14\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.secs: seconds (stamp_secs) since epoch\n\
-# * stamp.nsecs: nanoseconds since stamp_secs\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
-\n\
+    return "float64[14] datos\n\
 ";
   }
 
   static const char* value(const  ::epoc::Frecuencias_<ContainerAllocator> &) { return value(); } 
 };
 
-template<class ContainerAllocator> struct HasHeader< ::epoc::Frecuencias_<ContainerAllocator> > : public TrueType {};
-template<class ContainerAllocator> struct HasHeader< const ::epoc::Frecuencias_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct IsFixedSize< ::epoc::Frecuencias_<ContainerAllocator> > : public TrueType {};
 } // namespace message_traits
 } // namespace ros
 
@@ -209,21 +107,7 @@ template<class ContainerAllocator> struct Serializer< ::epoc::Frecuencias_<Conta
 {
   template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
   {
-    stream.next(m.header);
-    stream.next(m.sen1);
-    stream.next(m.sen2);
-    stream.next(m.sen3);
-    stream.next(m.sen4);
-    stream.next(m.sen5);
-    stream.next(m.sen6);
-    stream.next(m.sen7);
-    stream.next(m.sen8);
-    stream.next(m.sen9);
-    stream.next(m.sen10);
-    stream.next(m.sen11);
-    stream.next(m.sen12);
-    stream.next(m.sen13);
-    stream.next(m.sen14);
+    stream.next(m.datos);
   }
 
   ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -241,37 +125,12 @@ struct Printer< ::epoc::Frecuencias_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const  ::epoc::Frecuencias_<ContainerAllocator> & v) 
   {
-    s << indent << "header: ";
-s << std::endl;
-    Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
-    s << indent << "sen1: ";
-    Printer<double>::stream(s, indent + "  ", v.sen1);
-    s << indent << "sen2: ";
-    Printer<double>::stream(s, indent + "  ", v.sen2);
-    s << indent << "sen3: ";
-    Printer<double>::stream(s, indent + "  ", v.sen3);
-    s << indent << "sen4: ";
-    Printer<double>::stream(s, indent + "  ", v.sen4);
-    s << indent << "sen5: ";
-    Printer<double>::stream(s, indent + "  ", v.sen5);
-    s << indent << "sen6: ";
-    Printer<double>::stream(s, indent + "  ", v.sen6);
-    s << indent << "sen7: ";
-    Printer<double>::stream(s, indent + "  ", v.sen7);
-    s << indent << "sen8: ";
-    Printer<double>::stream(s, indent + "  ", v.sen8);
-    s << indent << "sen9: ";
-    Printer<double>::stream(s, indent + "  ", v.sen9);
-    s << indent << "sen10: ";
-    Printer<double>::stream(s, indent + "  ", v.sen10);
-    s << indent << "sen11: ";
-    Printer<double>::stream(s, indent + "  ", v.sen11);
-    s << indent << "sen12: ";
-    Printer<double>::stream(s, indent + "  ", v.sen12);
-    s << indent << "sen13: ";
-    Printer<double>::stream(s, indent + "  ", v.sen13);
-    s << indent << "sen14: ";
-    Printer<double>::stream(s, indent + "  ", v.sen14);
+    s << indent << "datos[]" << std::endl;
+    for (size_t i = 0; i < v.datos.size(); ++i)
+    {
+      s << indent << "  datos[" << i << "]: ";
+      Printer<double>::stream(s, indent + "  ", v.datos[i]);
+    }
   }
 };
 

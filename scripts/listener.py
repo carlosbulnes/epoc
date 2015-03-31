@@ -1,40 +1,4 @@
 #!/usr/bin/env python
-# Software License Agreement (BSD License)
-#
-# Copyright (c) 2008, Willow Garage, Inc.
-# All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions
-# are met:
-#
-#  * Redistributions of source code must retain the above copyright
-#    notice, this list of conditions and the following disclaimer.
-#  * Redistributions in binary form must reproduce the above
-#    copyright notice, this list of conditions and the following
-#    disclaimer in the documentation and/or other materials provided
-#    with the distribution.
-#  * Neither the name of Willow Garage, Inc. nor the names of its
-#    contributors may be used to endorse or promote products derived
-#    from this software without specific prior written permission.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-# COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-# ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-# POSSIBILITY OF SUCH DAMAGE.
-#
-# Revision $Id$
-
-## Simple talker demo that listens to std_msgs/Strings published 
-## to the 'chatter' topic
 
 import rospy
 import roslib; roslib.load_manifest('epoc')
@@ -48,10 +12,12 @@ class GUIForm(QtGui.QWidget):
         QtGui.QWidget.__init__(self,parent)
         self.ui = Ui_EpocGUI()
         self.ui.setupUi(self)
+        self.grafica = False
+
+        self.listener()        
         #self.recibe_frecuencias(self)
         #print 'Creando objeto de ROS'
         #self.ros = ROS(self)
-        self.frecuencias = []
         #print 'Objeto ros creado'
         #raw_input()
         #ros.recibe_frecuencias2()
@@ -59,10 +25,12 @@ class GUIForm(QtGui.QWidget):
         #QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.playGraph)
         QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.playGraph)
         QtCore.QObject.connect(self.ui.stopButton, QtCore.SIGNAL('clicked()'), self.stop_service)
+        QtCore.QObject.connect(self.ui.pauseButton, QtCore.SIGNAL('clicked()'), self.pauseGraph)
 
     def playGraph(self):
-        """ Activa la comunicacion ROS """
-        self.listener()
+        #""" Activa la comunicacion ROS """
+        #self.listener()
+        self.grafica = True
         #self.ui.playButton.setEnable(False) # Inhabilita el boton para evitar multiples invocaciones al servidor.
         #self.ui.stopButton.setEnable(True) # Habilita el boton de Stop
         #print "Frecuencias: ", self.frecuencias
@@ -72,22 +40,35 @@ class GUIForm(QtGui.QWidget):
         #print 'comienza a graficar valores: ', frecuencias
         #print 'Objeto recibido', gui
         #randomNumbers = random.sample(range(0, 10), 10)
+        #if self.grafica:
         self.ui.widget.canvas.ax.clear()
         self.ui.widget.canvas.ax.plot(frecuencias)
         self.ui.widget.canvas.draw()
         #print 'termina de graficar'
 
     def stop_service(self):
-        rospy.signal_shutdown("Se presiono el boton detener")
+        detener = QtGui.QMessageBox.warning(self, 'Precaucion', 
+        'Al detener el servicio sera necesario reiniciar el programa',
+        QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+        
+        if detener == QtGui.QMessageBox.Yes:
+            rospy.signal_shutdown("Se presiono el boton detener")
         
         #self.ui.playButton.setEnable(True) # Reactiva el boton de Play para poder volver a iniciar el servidor.
         #self.ui.stopButton.setEnable(False) # Inhabilita el boton de Stop
 
+    def pauseGraph(self):
+        self.grafica = False
+
     def callback(self, data):
-        self.graficar(data.datos)
+        if self.grafica:
+            #frecuencias = [0]
+            frecuencias = list(data.datos)
+            frecuencias.insert(0, 0)
+            self.graficar(frecuencias)
         #print 'Senales: ', self.frecuencias
         #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
+            rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
 
     def listener(self):
 

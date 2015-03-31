@@ -52,13 +52,13 @@ def talker():
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
         #pub.publish(hello_str)
-        for i in range(1000):
-            frecuencias = []
-            for j in range(14):
-                frecuencias.append(np.random.random())
-            #frecuencias = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-            pub.publish(frecuencias)
-            rate.sleep()
+        #for i in range(1000):
+        frecuencias = []
+        for j in range(14):
+            frecuencias.append(np.random.random())
+        #frecuencias = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+        pub.publish(frecuencias)
+        rate.sleep()
 
 if __name__ == '__main__':
     try:

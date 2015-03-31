@@ -23,6 +23,7 @@ class Ui_EpocGUI(object):
         self.widget = matplotlibWidget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(10, 60, 611, 561))
         self.widget.setObjectName(_fromUtf8("widget"))
+
         self.pauseButton = QtGui.QPushButton(self.centralwidget)
         self.pauseButton.setGeometry(QtCore.QRect(650, 160, 85, 27))
         self.pauseButton.setText(_fromUtf8("Pausar"))
@@ -30,6 +31,7 @@ class Ui_EpocGUI(object):
         icon.addPixmap(QtGui.QPixmap(_fromUtf8("img/pause.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pauseButton.setIcon(icon)
         self.pauseButton.setObjectName(_fromUtf8("pauseButton"))
+        
         self.stopButton = QtGui.QPushButton(self.centralwidget)
         self.stopButton.setGeometry(QtCore.QRect(850, 160, 85, 27))
         self.stopButton.setText(_fromUtf8("Detener"))
@@ -37,6 +39,7 @@ class Ui_EpocGUI(object):
         icon1.addPixmap(QtGui.QPixmap(_fromUtf8("img/stop.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.stopButton.setIcon(icon1)
         self.stopButton.setObjectName(_fromUtf8("stopButton"))
+        
         self.playButton = QtGui.QPushButton(self.centralwidget)
         self.playButton.setGeometry(QtCore.QRect(750, 160, 85, 27))
         self.playButton.setText(_fromUtf8("Ejecutar"))
@@ -44,6 +47,7 @@ class Ui_EpocGUI(object):
         icon2.addPixmap(QtGui.QPixmap(_fromUtf8("img/play.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.playButton.setIcon(icon2)
         self.playButton.setObjectName(_fromUtf8("playButton"))
+        
         self.textBrowser = QtGui.QTextBrowser(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(630, 270, 331, 340))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))

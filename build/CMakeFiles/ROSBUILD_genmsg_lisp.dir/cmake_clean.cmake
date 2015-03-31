@@ -1,10 +1,7 @@
 FILE(REMOVE_RECURSE
   "../msg_gen"
-  "../srv_gen"
   "../src/epoc/msg"
-  "../src/epoc/srv"
   "../msg_gen"
-  "../srv_gen"
   "CMakeFiles/ROSBUILD_genmsg_lisp"
   "../msg_gen/lisp/Frecuencias.lisp"
   "../msg_gen/lisp/_package.lisp"

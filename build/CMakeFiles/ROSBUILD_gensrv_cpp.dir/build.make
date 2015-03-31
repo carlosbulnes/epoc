@@ -42,23 +42,9 @@ CMAKE_BINARY_DIR = /home/carlos/fuerte_workspace/sandbox/epoc/build
 # Include the progress variables for this target.
 include CMakeFiles/ROSBUILD_gensrv_cpp.dir/progress.make
 
-CMakeFiles/ROSBUILD_gensrv_cpp: ../srv_gen/cpp/include/epoc/Frecuencias.h
-
-../srv_gen/cpp/include/epoc/Frecuencias.h: ../srv/Frecuencias.srv
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/gensrv_cpp.py
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roscpp/rosbuild/scripts/genmsg_cpp.py
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roslib/bin/gendeps
-../srv_gen/cpp/include/epoc/Frecuencias.h: ../manifest.xml
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/std_msgs/manifest.xml
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roslang/manifest.xml
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/rospy/manifest.xml
-../srv_gen/cpp/include/epoc/Frecuencias.h: /opt/ros/fuerte/share/roscpp/manifest.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/carlos/fuerte_workspace/sandbox/epoc/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../srv_gen/cpp/include/epoc/Frecuencias.h"
-	/opt/ros/fuerte/share/roscpp/rosbuild/scripts/gensrv_cpp.py /home/carlos/fuerte_workspace/sandbox/epoc/srv/Frecuencias.srv
+CMakeFiles/ROSBUILD_gensrv_cpp:
 
 ROSBUILD_gensrv_cpp: CMakeFiles/ROSBUILD_gensrv_cpp
-ROSBUILD_gensrv_cpp: ../srv_gen/cpp/include/epoc/Frecuencias.h
 ROSBUILD_gensrv_cpp: CMakeFiles/ROSBUILD_gensrv_cpp.dir/build.make
 .PHONY : ROSBUILD_gensrv_cpp
 

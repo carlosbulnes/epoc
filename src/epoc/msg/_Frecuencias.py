@@ -6,27 +6,13 @@ import struct
 
 
 class Frecuencias(genpy.Message):
-  _md5sum = "d0613b2dd48ef9386b459a8613f058ce"
+  _md5sum = "3cc745c08934b0cd21fbac2bdbf11b12"
   _type = "epoc/Frecuencias"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """float64 sen1
-float64 sen2
-float64 sen3
-float64 sen4
-float64 sen5
-float64 sen6
-float64 sen7
-float64 sen8
-float64 sen9
-float64 sen10
-float64 sen11
-float64 sen12
-float64 sen13
-float64 sen14
-
+  _full_text = """float64[14] datos
 """
-  __slots__ = ['sen1','sen2','sen3','sen4','sen5','sen6','sen7','sen8','sen9','sen10','sen11','sen12','sen13','sen14']
-  _slot_types = ['float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64']
+  __slots__ = ['datos']
+  _slot_types = ['float64[14]']
 
   def __init__(self, *args, **kwds):
     """
@@ -36,7 +22,7 @@ float64 sen14
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       sen1,sen2,sen3,sen4,sen5,sen6,sen7,sen8,sen9,sen10,sen11,sen12,sen13,sen14
+       datos
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -45,49 +31,10 @@ float64 sen14
     if args or kwds:
       super(Frecuencias, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.sen1 is None:
-        self.sen1 = 0.
-      if self.sen2 is None:
-        self.sen2 = 0.
-      if self.sen3 is None:
-        self.sen3 = 0.
-      if self.sen4 is None:
-        self.sen4 = 0.
-      if self.sen5 is None:
-        self.sen5 = 0.
-      if self.sen6 is None:
-        self.sen6 = 0.
-      if self.sen7 is None:
-        self.sen7 = 0.
-      if self.sen8 is None:
-        self.sen8 = 0.
-      if self.sen9 is None:
-        self.sen9 = 0.
-      if self.sen10 is None:
-        self.sen10 = 0.
-      if self.sen11 is None:
-        self.sen11 = 0.
-      if self.sen12 is None:
-        self.sen12 = 0.
-      if self.sen13 is None:
-        self.sen13 = 0.
-      if self.sen14 is None:
-        self.sen14 = 0.
+      if self.datos is None:
+        self.datos = [0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.]
     else:
-      self.sen1 = 0.
-      self.sen2 = 0.
-      self.sen3 = 0.
-      self.sen4 = 0.
-      self.sen5 = 0.
-      self.sen6 = 0.
-      self.sen7 = 0.
-      self.sen8 = 0.
-      self.sen9 = 0.
-      self.sen10 = 0.
-      self.sen11 = 0.
-      self.sen12 = 0.
-      self.sen13 = 0.
-      self.sen14 = 0.
+      self.datos = [0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.,0.]
 
   def _get_types(self):
     """
@@ -101,8 +48,7 @@ float64 sen14
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self
-      buff.write(_struct_14d.pack(_x.sen1, _x.sen2, _x.sen3, _x.sen4, _x.sen5, _x.sen6, _x.sen7, _x.sen8, _x.sen9, _x.sen10, _x.sen11, _x.sen12, _x.sen13, _x.sen14))
+      buff.write(_struct_14d.pack(*self.datos))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -113,10 +59,9 @@ float64 sen14
     """
     try:
       end = 0
-      _x = self
       start = end
       end += 112
-      (_x.sen1, _x.sen2, _x.sen3, _x.sen4, _x.sen5, _x.sen6, _x.sen7, _x.sen8, _x.sen9, _x.sen10, _x.sen11, _x.sen12, _x.sen13, _x.sen14,) = _struct_14d.unpack(str[start:end])
+      self.datos = _struct_14d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -129,8 +74,7 @@ float64 sen14
     :param numpy: numpy python module
     """
     try:
-      _x = self
-      buff.write(_struct_14d.pack(_x.sen1, _x.sen2, _x.sen3, _x.sen4, _x.sen5, _x.sen6, _x.sen7, _x.sen8, _x.sen9, _x.sen10, _x.sen11, _x.sen12, _x.sen13, _x.sen14))
+      buff.write(self.datos.tostring())
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -142,10 +86,9 @@ float64 sen14
     """
     try:
       end = 0
-      _x = self
       start = end
       end += 112
-      (_x.sen1, _x.sen2, _x.sen3, _x.sen4, _x.sen5, _x.sen6, _x.sen7, _x.sen8, _x.sen9, _x.sen10, _x.sen11, _x.sen12, _x.sen13, _x.sen14,) = _struct_14d.unpack(str[start:end])
+      self.datos = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=14)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill

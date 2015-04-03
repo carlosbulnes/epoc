@@ -48,9 +48,11 @@ class Ui_EpocGUI(object):
         self.playButton.setIcon(icon2)
         self.playButton.setObjectName(_fromUtf8("playButton"))
         
-        self.textBrowser = QtGui.QTextBrowser(self.centralwidget)
+        #self.textBrowser = QtGui.QTextBrowser(self.centralwidget)
+        self.textBrowser = QtGui.QPlainTextEdit(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(630, 270, 331, 340))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
+        self.textBrowser.setReadOnly(True)
         #EpocGUI.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(EpocGUI)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 975, 23))

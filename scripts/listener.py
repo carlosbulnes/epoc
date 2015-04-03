@@ -12,6 +12,8 @@ class GUIForm(QtGui.QWidget):
         QtGui.QWidget.__init__(self,parent)
         self.ui = Ui_EpocGUI()
         self.ui.setupUi(self)
+        self.ui.textBrowser.setPlainText("Prueba iniciada")
+        self.ui.textBrowser.appendPlainText("FASE 1")
         self.grafica = False
         self.listener()
 
@@ -46,7 +48,7 @@ class GUIForm(QtGui.QWidget):
 
     def callback(self, data):
         """ Recibe el mensaje transmitido """
-        
+
         if self.grafica:
             frecuencias = list(data.datos)
             frecuencias.insert(0, 0)

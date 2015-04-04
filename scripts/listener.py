@@ -1,10 +1,12 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import rospy
 import roslib; roslib.load_manifest('epoc')
 from epoc.msg import Frecuencias
 from GUI import *
 import sys
+from time import sleep
 
 class GUIForm(QtGui.QWidget):
  
@@ -12,8 +14,6 @@ class GUIForm(QtGui.QWidget):
         QtGui.QWidget.__init__(self,parent)
         self.ui = Ui_EpocGUI()
         self.ui.setupUi(self)
-        self.ui.textBrowser.setPlainText("Prueba iniciada")
-        self.ui.textBrowser.appendPlainText("FASE 1")
         self.grafica = False
         self.listener()
 
@@ -22,7 +22,7 @@ class GUIForm(QtGui.QWidget):
         QtCore.QObject.connect(self.ui.pauseButton, QtCore.SIGNAL('clicked()'), self.pausaGraficar)
 
     def habilitaGraficar(self):
-        """ Habilita la graficacion por medio de la bandera """
+        """ Habilita la graficación por medio de la bandera """
 
         self.grafica = True
 
@@ -36,12 +36,15 @@ class GUIForm(QtGui.QWidget):
     def detenerROS(self):
         """ Detiene la comunicacion ROS, no se puede revertir """
 
-        detener = QtGui.QMessageBox.warning(self, 'Precaucion', 
-        'Al detener el servicio sera necesario reiniciar el programa',
+        detener = QtGui.QMessageBox.question(self, 'Detener', 
+        "¿Detener y grabar datos de experimento?",
         QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
         
         if detener == QtGui.QMessageBox.Yes:
-            rospy.signal_shutdown("Se presiono el boton detener")
+            #rospy.signal_shutdown("Se presiono el boton detener")
+            self.grafica = False
+            sleep(.1)
+            self.ui.textBrowser.setPlainText("")
 
     def pausaGraficar(self):
         self.grafica = False
@@ -54,6 +57,8 @@ class GUIForm(QtGui.QWidget):
             frecuencias.insert(0, 0)
             self.graficar(frecuencias)
             rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
+            self.ui.textBrowser.appendPlainText(str(frecuencias))
+            self.ui.textBrowser.appendPlainText("")
 
     def listener(self):
         """ Inicia la comunicacion ROS """

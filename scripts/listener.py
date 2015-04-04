@@ -43,11 +43,18 @@ class GUIForm(QtGui.QWidget):
         if detener == QtGui.QMessageBox.Yes:
             #rospy.signal_shutdown("Se presiono el boton detener")
             self.grafica = False
-            sleep(.1)
-            self.ui.textBrowser.setPlainText("")
+            #sleep(.1)
+            #self.ui.textBrowser.setPlainText("")
+            self.generarLog()
 
     def pausaGraficar(self):
         self.grafica = False
+
+    def generarLog(self):
+        sleep(.1)
+        file = open('pruebax.xls', 'w')
+        file.write(self.ui.textBrowser.toPlainText())
+        self.ui.textBrowser.setPlainText("")
 
     def callback(self, data):
         """ Recibe el mensaje transmitido """
@@ -74,4 +81,5 @@ if __name__ == '__main__':
     myapp.show()
     globalGUI = myapp   
     sys.exit(app.exec_())
+    rospy.signal_shutdown("Se presiono el boton detener")
     #listener()

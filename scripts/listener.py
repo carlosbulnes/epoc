@@ -52,7 +52,9 @@ class GUIForm(QtGui.QWidget):
 
     def generarLog(self):
         sleep(.1)
-        file = open('pruebax.xls', 'w')
+        text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Nombre del archivo:')
+
+        file = open(text + '.xls', 'w')
         file.write(self.ui.textBrowser.toPlainText())
         self.ui.textBrowser.setPlainText("")
 

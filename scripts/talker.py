@@ -8,16 +8,16 @@ from epoc.msg import Frecuencias
 def talker():
     pub = rospy.Publisher('mensaje', Frecuencias)
     rospy.init_node('talker', anonymous=True, disable_signals=False)
-    rate = rospy.Rate(10) # 10hz
+    rate = rospy.Rate(5) # 10hz
     while not rospy.is_shutdown():
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
-        frecuencias = []
+        data = []
         
-        for j in range(14):
-            frecuencias.append(np.random.random())
+        for i in range(14):
+            data.append(np.random.random())
 
-        pub.publish(frecuencias)
+        pub.publish(data)
         rate.sleep()
 
 if __name__ == '__main__':

@@ -15,6 +15,7 @@ class GUIForm(QtGui.QWidget):
         self.ui = Ui_EpocGUI()
         self.ui.setupUi(self)
         self.grafica = False
+        self.frecuencias = [[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
         self.listener()
 
         QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.habilitaGraficar)
@@ -29,8 +30,22 @@ class GUIForm(QtGui.QWidget):
     def graficar(self, frecuencias):
         """ Funcion que manda los datos a graficar """
 
-        self.ui.widget.canvas.ax.clear()
-        self.ui.widget.canvas.ax.plot(frecuencias)
+        #self.ui.widget.canvas.ax.clear()
+        self.ui.widget.canvas.ax.plot(frecuencias[0])
+        self.ui.widget.canvas.ax.plot(frecuencias[1])
+        self.ui.widget.canvas.ax.plot(frecuencias[2])
+        self.ui.widget.canvas.ax.plot(frecuencias[3])
+        self.ui.widget.canvas.ax.plot(frecuencias[4])
+        self.ui.widget.canvas.ax.plot(frecuencias[5])
+        self.ui.widget.canvas.ax.plot(frecuencias[6])
+        self.ui.widget.canvas.ax.plot(frecuencias[7])
+        self.ui.widget.canvas.ax.plot(frecuencias[8])
+        self.ui.widget.canvas.ax.plot(frecuencias[9])
+        self.ui.widget.canvas.ax.plot(frecuencias[10])
+        self.ui.widget.canvas.ax.plot(frecuencias[11])
+        self.ui.widget.canvas.ax.plot(frecuencias[12])
+        self.ui.widget.canvas.ax.plot(frecuencias[13])
+        
         self.ui.widget.canvas.draw()
 
     def detenerROS(self):
@@ -62,11 +77,33 @@ class GUIForm(QtGui.QWidget):
         """ Recibe el mensaje transmitido """
 
         if self.grafica:
-            frecuencias = list(data.datos)
-            frecuencias.insert(0, 0)
-            self.graficar(frecuencias)
-            rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
-            self.ui.textBrowser.appendPlainText(str(frecuencias))
+            data = list(data.datos)
+            
+            self.frecuencias[0].append(data[0])
+            self.frecuencias[1].append(data[1])
+            self.frecuencias[2].append(data[2])
+            self.frecuencias[3].append(data[3])
+            self.frecuencias[4].append(data[4])
+            self.frecuencias[5].append(data[5])
+            self.frecuencias[6].append(data[6])
+            self.frecuencias[7].append(data[7])
+            self.frecuencias[8].append(data[8])
+            self.frecuencias[9].append(data[9])
+            self.frecuencias[10].append(data[10])
+            self.frecuencias[11].append(data[11])
+            self.frecuencias[12].append(data[12])
+            self.frecuencias[13].append(data[13])
+
+            if len(self.frecuencias[0]) == 30:
+                self.frecuencias = [[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+                self.ui.widget.canvas.ax.clear()
+
+            self.graficar(self.frecuencias)
+            #frecuencias2 = sorted(data)
+            #print data
+            #self.graficar(data, frecuencias2)
+            #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
+            self.ui.textBrowser.appendPlainText(str(data))
             self.ui.textBrowser.appendPlainText("")
 
     def listener(self):

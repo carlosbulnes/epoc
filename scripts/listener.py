@@ -59,7 +59,6 @@ class GUIForm(QtGui.QWidget):
             #rospy.signal_shutdown("Se presiono el boton detener")
         self.grafica = False
             #sleep(.1)
-            #self.ui.textBrowser.setPlainText("")
         self.generarLog()
 
     def pausaGraficar(self):
@@ -95,11 +94,13 @@ class GUIForm(QtGui.QWidget):
             self.frecuencias[11].append(data[11])
             self.frecuencias[12].append(data[12])
             self.frecuencias[13].append(data[13])
+            
             log = str(str(data[0]) + ', ' + str(data[1]) + ', ' + str(data[2]) + 
                       ', ' + str(data[3]) + ', ' + str(data[4]) + ', ' + str(data[5]) + 
                       ', ' + str(data[6]) + ', ' + str(data[7]) + ', ' + str(data[8]) + 
                       ', ' + str(data[9]) + ', ' + str(data[10]) + ', ' + str(data[11]) + 
                       ', ' + str(data[12]) + ', ' + str(data[13]))
+            
             self.ui.textBrowser.appendPlainText(log)
             self.ui.textBrowser.appendPlainText("")
 
@@ -108,12 +109,7 @@ class GUIForm(QtGui.QWidget):
                 self.ui.widget.canvas.ax.clear()
 
             self.graficar(self.frecuencias)
-            #frecuencias2 = sorted(data)
-            #print data
-            #self.graficar(data, frecuencias2)
             #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
-            #self.ui.textBrowser.appendPlainText(str(data))
-            #self.ui.textBrowser.appendPlainText("")
 
     def listener(self):
         """ Inicia la comunicacion ROS """

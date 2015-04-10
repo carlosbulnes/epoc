@@ -8,7 +8,7 @@ from epoc.msg import Frecuencias
 def talker():
     pub = rospy.Publisher('mensaje', Frecuencias)
     rospy.init_node('talker', anonymous=True, disable_signals=False)
-    rate = rospy.Rate(5) # 10hz
+    rate = rospy.Rate(3) # 10hz
     while not rospy.is_shutdown():
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)

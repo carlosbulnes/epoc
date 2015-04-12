@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'epoc2.ui'
+# Form implementation generated from reading ui file 'epoc.ui'
 #
-# Created: Sat Apr 11 18:36:04 2015
+# Created: Mon Mar 16 12:44:17 2015
 #      by: PyQt4 UI code generator 4.9.1
-#
-# WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
 
@@ -17,14 +15,13 @@ except AttributeError:
 class Ui_EpocGUI(object):
     def setupUi(self, EpocGUI):
         EpocGUI.setObjectName(_fromUtf8("EpocGUI"))
-        EpocGUI.resize(975, 765)
+        #EpocGUI.resize(975, 700)
+        EpocGUI.setGeometry(200, 100, 975, 700)
         #EpocGUI.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.centralwidget = QtGui.QWidget(EpocGUI)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.widget = matplotlibWidget(self.centralwidget)
-        #self.widget.setGeometry(QtCore.QRect(10, 60, 611, 561))
-        #self.widget = matplotWindget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(20, 20, 291, 171))
+        self.widget.setGeometry(QtCore.QRect(10, 60, 611, 561))
         self.widget.setObjectName(_fromUtf8("widget"))
 
         self.pauseButton = QtGui.QPushButton(self.centralwidget)
@@ -56,25 +53,6 @@ class Ui_EpocGUI(object):
         self.textBrowser.setGeometry(QtCore.QRect(630, 270, 331, 340))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
         self.textBrowser.setReadOnly(True)
-
-        self.widget_2 = matplotlibWidget(self.centralwidget)
-        self.widget_2.setGeometry(QtCore.QRect(320, 20, 291, 171))
-        self.widget_2.setObjectName(_fromUtf8("widget_2"))
-        self.widget_4 = matplotlibWidget(self.centralwidget)
-        self.widget_4.setGeometry(QtCore.QRect(320, 200, 291, 171))
-        self.widget_4.setObjectName(_fromUtf8("widget_4"))
-        self.widget_3 = matplotlibWidget(self.centralwidget)
-        self.widget_3.setGeometry(QtCore.QRect(20, 200, 291, 171))
-        self.widget_3.setObjectName(_fromUtf8("widget_3"))
-        self.widget_7 = matplotlibWidget(self.centralwidget)
-        self.widget_7.setGeometry(QtCore.QRect(20, 560, 291, 171))
-        self.widget_7.setObjectName(_fromUtf8("widget_7"))
-        self.widget_6 = matplotlibWidget(self.centralwidget)
-        self.widget_6.setGeometry(QtCore.QRect(320, 380, 291, 171))
-        self.widget_6.setObjectName(_fromUtf8("widget_6"))
-        self.widget_5 = matplotlibWidget(self.centralwidget)
-        self.widget_5.setGeometry(QtCore.QRect(20, 380, 291, 171))
-        self.widget_5.setObjectName(_fromUtf8("widget_5"))
         #EpocGUI.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(EpocGUI)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 975, 23))

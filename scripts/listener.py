@@ -6,6 +6,7 @@ import roslib; roslib.load_manifest('epoc')
 from epoc.msg import Frecuencias
 from GUI import *
 import sys
+from time import strftime
 from time import sleep
 
 class GUIForm(QtGui.QWidget):
@@ -72,13 +73,21 @@ class GUIForm(QtGui.QWidget):
 
     def generarLog(self):
         sleep(.1)
-        text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Nombre del archivo:')
+        #text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Nombre del archivo:')
 
-        file = open(text + '.xls', 'w')
-        file.write('Señal 1, Señal 2, Señal 3, Señal 4, Señal 5, Señal 6, Señal 7,'
-                    ' Señal 8, Señal 9, Señal 10, Señal 11, Señal 12, Señal 13, Señal 14\n')
-        file.write(self.ui.textBrowser.toPlainText())
-        self.ui.textBrowser.setPlainText("")
+        nombre = self.ui.textNombrePrueba.toPlainText()
+        if nombre:
+            nombre = nombre + '_' + strftime("%d-%m-%y_%H:%M") + '.xls'
+            file = open(nombre, 'w')
+            file.write('Señal 1, Señal 2, Señal 3, Señal 4, Señal 5, Señal 6, Señal 7,'
+                        ' Señal 8, Señal 9, Señal 10, Señal 11, Señal 12, Señal 13, Señal 14\n')
+            file.write(self.ui.textBrowser.toPlainText())
+            self.ui.textBrowser.setPlainText("")
+        else:
+            msgBox = QtGui.QMessageBox(QtGui.QMessageBox.Warning,
+                "QMessageBox.warning()", "Espeficifica un nombre y presiona Detener nuevamente",
+                QtGui.QMessageBox.NoButton, self)
+            msgBox.exec_()
 
     def callback(self, data):
         """ Recibe el mensaje transmitido """

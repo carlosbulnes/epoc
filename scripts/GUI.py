@@ -75,6 +75,13 @@ class Ui_EpocGUI(object):
         self.widget_5 = matplotlibWidget(self.centralwidget)
         self.widget_5.setGeometry(QtCore.QRect(20, 380, 291, 171))
         self.widget_5.setObjectName(_fromUtf8("widget_5"))
+        
+        self.textNombrePrueba = QtGui.QPlainTextEdit(self.centralwidget)
+        self.textNombrePrueba.setGeometry(QtCore.QRect(650, 100, 281, 21))
+        self.textNombrePrueba.setObjectName(_fromUtf8("textNombrePrueba"))
+        self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(650, 80, 141, 16))
+        self.label.setObjectName(_fromUtf8("label"))
         #EpocGUI.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(EpocGUI)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 975, 23))
@@ -86,7 +93,7 @@ class Ui_EpocGUI(object):
 
     def retranslateUi(self, EpocGUI):
         EpocGUI.setWindowTitle(QtGui.QApplication.translate("EpocGUI", "Epoc", None, QtGui.QApplication.UnicodeUTF8))
-        #EpocGUI.setWindowTitle('Epoc')
+        self.label.setText(QtGui.QApplication.translate("EpocGUI", "Nombre del experimento", None, QtGui.QApplication.UnicodeUTF8))
 
 from matplotlibwidgetFile import matplotlibWidget
 #import imagenes_rc

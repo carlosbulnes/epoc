@@ -31,7 +31,6 @@ class GUIForm(QtGui.QWidget):
     def graficar(self, frecuencias):
         """ Funcion que manda los datos a graficar """
 
-        #self.ui.widget.canvas.ax.clear()
         self.ui.widget.canvas.ax.plot(frecuencias[0])
         self.ui.widget.canvas.ax.plot(frecuencias[1])
         self.ui.widget_2.canvas.ax.plot(frecuencias[2])
@@ -58,14 +57,7 @@ class GUIForm(QtGui.QWidget):
     def detenerROS(self):
         """ Detiene la comunicacion ROS, no se puede revertir """
 
-        #detener = QtGui.QMessageBox.question(self, 'Detener', 
-        #"¿Detener y grabar datos de experimento?",
-        #QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
-        
-        #if detener == QtGui.QMessageBox.Yes:
-            #rospy.signal_shutdown("Se presiono el boton detener")
         self.grafica = False
-            #sleep(.1)
         self.generarLog()
 
     def pausaGraficar(self):
@@ -73,7 +65,6 @@ class GUIForm(QtGui.QWidget):
 
     def generarLog(self):
         sleep(.1)
-        #text, ok = QtGui.QInputDialog.getText(self, 'Input Dialog', 'Nombre del archivo:')
 
         nombre = self.ui.textNombrePrueba.toPlainText()
         if nombre:
@@ -130,7 +121,6 @@ class GUIForm(QtGui.QWidget):
                 self.ui.widget_7.canvas.ax.clear()
 
             self.graficar(self.frecuencias)
-            #rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.datos)
 
     def listener(self):
         """ Inicia la comunicacion ROS """

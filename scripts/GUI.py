@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from matplotlibwidgetFile import matplotlibWidget
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -18,12 +19,10 @@ class Ui_EpocGUI(object):
     def setupUi(self, EpocGUI):
         EpocGUI.setObjectName(_fromUtf8("EpocGUI"))
         EpocGUI.resize(975, 765)
-        #EpocGUI.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
+
         self.centralwidget = QtGui.QWidget(EpocGUI)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.widget = matplotlibWidget(self.centralwidget)
-        #self.widget.setGeometry(QtCore.QRect(10, 60, 611, 561))
-        #self.widget = matplotWindget(self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(20, 20, 291, 171))
         self.widget.setObjectName(_fromUtf8("widget"))
 
@@ -51,7 +50,6 @@ class Ui_EpocGUI(object):
         self.playButton.setIcon(icon2)
         self.playButton.setObjectName(_fromUtf8("playButton"))
         
-        #self.textBrowser = QtGui.QTextBrowser(self.centralwidget)
         self.textBrowser = QtGui.QPlainTextEdit(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(630, 270, 331, 340))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
@@ -79,14 +77,14 @@ class Ui_EpocGUI(object):
         self.textNombrePrueba = QtGui.QPlainTextEdit(self.centralwidget)
         self.textNombrePrueba.setGeometry(QtCore.QRect(650, 100, 281, 21))
         self.textNombrePrueba.setObjectName(_fromUtf8("textNombrePrueba"))
+        
         self.label = QtGui.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(650, 80, 141, 16))
         self.label.setObjectName(_fromUtf8("label"))
-        #EpocGUI.setCentralWidget(self.centralwidget)
+
         self.menubar = QtGui.QMenuBar(EpocGUI)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 975, 23))
         self.menubar.setObjectName(_fromUtf8("menubar"))
-        #EpocGUI.setMenuBar(self.menubar)
 
         self.retranslateUi(EpocGUI)
         QtCore.QMetaObject.connectSlotsByName(EpocGUI)
@@ -94,6 +92,3 @@ class Ui_EpocGUI(object):
     def retranslateUi(self, EpocGUI):
         EpocGUI.setWindowTitle(QtGui.QApplication.translate("EpocGUI", "Epoc", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("EpocGUI", "Nombre del experimento", None, QtGui.QApplication.UnicodeUTF8))
-
-from matplotlibwidgetFile import matplotlibWidget
-#import imagenes_rc

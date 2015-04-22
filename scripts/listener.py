@@ -158,7 +158,6 @@ if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
     myapp = GUIForm()
     myapp.show()
-    globalGUI = myapp   
     sys.exit(app.exec_())
-    rospy.signal_shutdown("Se presiono el boton detener")
+    #rospy.signal_shutdown("Se presiono el boton detener")
     #listener()

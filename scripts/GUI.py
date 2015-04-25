@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from matplotlibwidgetFile import matplotlibWidget
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -114,5 +115,3 @@ class Ui_EpocGUI(object):
         EpocGUI.setWindowTitle(QtGui.QApplication.translate("EpocGUI", "Epoc", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("EpocGUI", "Nombre del experimento", None, QtGui.QApplication.UnicodeUTF8))
 
-from matplotlibwidgetFile import matplotlibWidget
-#import imagenes_rc

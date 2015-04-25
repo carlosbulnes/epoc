@@ -12,10 +12,10 @@ def talker():
     while not rospy.is_shutdown():
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
-        data = []
+        data = [850,278,24,504,30,-23,473,1074,-242,688,471,-304,560,-185]
         
-        for i in range(14):
-            data.append(np.random.random())
+        #for i in range(14):
+        #    data.append(np.random.random())
 
         pub.publish(data)
         rate.sleep()

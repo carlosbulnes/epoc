@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {chapter}{Introducci\'on}{1}
+\contentsline {chapter}{Justificaci\'on}{2}
+\contentsline {chapter}{Hip\'otesis}{3}
+\contentsline {chapter}{Objetivos}{4}
+\contentsline {section}{Objetivo General}{4}
+\contentsline {section}{Objetivos Particulares}{4}

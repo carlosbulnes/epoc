@@ -2,11 +2,13 @@
 \usepackage[spanish]{babel}
 \usepackage[latin1]{inputenc}
 %\usepackage[T1]{fontenc}
-\usepackage[Sonny]{fncychap}
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Lenny]{fncychap}
 \usepackage{fullpage}
 %\usepackage{algorithm}
 
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \pagenumbering{roman}
@@ -36,9 +38,11 @@
 \input{text/Antecedentes}\newpage\cleardoublepage
 
 %\listofalgorithms
-\listoffigures
-\listoftables
+%\listoffigures
+%\listoftables
 
+\markboth{\MakeUppercase{Bibliografía}}{}
+\addcontentsline{toc}{chapter}{Bibliografía}
 \bibliography{bib/Bibliografia}\newpage\cleardoublepage
 
 \end{document}

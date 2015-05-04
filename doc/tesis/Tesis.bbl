@@ -1,13 +1,27 @@
 \begin{thebibliography}{1}
 
 \bibitem{ref1}
-Fernando~Gabucio Cerezo.
-\newblock {\em Psicolog\'ia del Pensamiento}.
+F.~G. Cerezo, {\em Psicolog\'ia del Pensamiento}.
 
 \bibitem{ref2}
-Job~Ram\'on de~la O~Ch\'avez.
-\newblock Interfaz cerebro -- computadora para el control de un cursor basado
-  en ondas cerebrales.
-\newblock pages 16--19.
+J.~R. de~la O~Ch\'avez, ``Interfaz cerebro -- computadora para el control de un
+  cursor basado en ondas cerebrales,'' pp.~16--19.
+
+\bibitem{seniorepoc}
+I.~Senior~Design, ``Epoc-alypse mind controlled car,''
+
+\bibitem{raza2012ssvep}
+A.~Raza, ``Ssvep based eeg interface for google street view navigation,'' 2012.
+
+\bibitem{2009ros}
+M.~Quigley, K.~Conley, B.~Gerkey, J.~Faust, T.~Foote, J.~Leibs, R.~Wheeler, and
+  A.~Y. Ng, ``Ros: an open-source robot operating system,'' in {\em ICRA
+  workshop on open source software}, vol.~3, p.~5, 2009.
+
+\bibitem{kranz2010things}
+M.~Kranz, L.~Roalter, and F.~Michahelles, ``Things that twitter: social
+  networks and the internet of things,'' in {\em What can the Internet of
+  Things do for the Citizen (CIoT) Workshop at The Eighth International
+  Conference on Pervasive Computing (Pervasive 2010)}, pp.~1--10, 2010.
 
 \end{thebibliography}

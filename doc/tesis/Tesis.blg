@@ -3,53 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Tesis.aux
 The style file: ieeetr.bst
 Database file #1: bib/Bibliografia.bib
-Warning--empty publisher in ref1
-Warning--empty year in ref1
-Warning--empty journal in ref2
-Warning--empty year in ref2
-Warning--empty journal in seniorepoc
-Warning--empty year in seniorepoc
-Warning--empty journal in raza2012ssvep
-Warning--can't use both volume and number fields in 2009ros
-You've used 6 entries,
+Warning--empty year in emokit
+You've used 1 entry,
             1876 wiz_defined-function locations,
-            504 strings with 4365 characters,
-and the built_in function-call counts, 1271 in all, are:
-= -- 100
-> -- 53
+            481 strings with 3574 characters,
+and the built_in function-call counts, 172 in all, are:
+= -- 11
+> -- 8
 < -- 0
-+ -- 21
-- -- 15
-* -- 94
-:= -- 189
-add.period$ -- 5
-call.type$ -- 6
-change.case$ -- 5
++ -- 3
+- -- 2
+* -- 13
+:= -- 35
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 73
-empty$ -- 139
-format.name$ -- 15
-if$ -- 295
+cite$ -- 2
+duplicate$ -- 9
+empty$ -- 18
+format.name$ -- 2
+if$ -- 35
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 7
-newline$ -- 21
-num.names$ -- 6
-pop$ -- 40
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 6
+num.names$ -- 1
+pop$ -- 5
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 30
+skip$ -- 2
 stack$ -- 0
-substring$ -- 45
-swap$ -- 16
+substring$ -- 0
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 8
-while$ -- 13
-width$ -- 7
-write$ -- 47
-(There were 8 warnings)
+warning$ -- 1
+while$ -- 1
+width$ -- 2
+write$ -- 9
+(There was 1 warning)

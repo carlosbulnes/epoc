@@ -1,9 +1,11 @@
 \select@language {spanish}
 \contentsline {chapter}{Introducci\'on}{1}
-\contentsline {chapter}{Justificaci\'on}{2}
-\contentsline {chapter}{Hip\'otesis}{3}
-\contentsline {chapter}{Objetivos}{4}
-\contentsline {section}{Objetivo General}{4}
-\contentsline {section}{Objetivos Particulares}{4}
-\contentsline {chapter}{Antecedentes}{5}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{6}
+\contentsline {section}{Justificaci\'on}{2}
+\contentsline {section}{Objetivos}{3}
+\contentsline {subsection}{Objetivo General}{3}
+\contentsline {subsection}{Objetivos Particulares}{3}
+\contentsline {section}{Antecedentes}{4}
+\contentsline {chapter}{Dise\~no}{5}
+\contentsline {chapter}{Desarrollo}{6}
+\contentsline {chapter}{Conclusi\'on y trabajo futuro}{7}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{8}

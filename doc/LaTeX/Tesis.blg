@@ -1,45 +1,53 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Tesis.aux
 The style file: ieeetr.bst
 Database file #1: bib/Bibliografia.bib
-You've used 4 entries,
+Warning--empty journal in intcerebro
+Warning--empty year in intcerebro
+Warning--empty journal in seniorepoc
+Warning--empty year in seniorepoc
+Warning--empty journal in raza2012ssvep
+Warning--can't use both volume and number fields in 2009ros
+You've used 10 entries,
             1876 wiz_defined-function locations,
-            496 strings with 3973 characters,
-and the built_in function-call counts, 607 in all, are:
-= -- 46
-> -- 27
+            524 strings with 4878 characters,
+and the built_in function-call counts, 1847 in all, are:
+= -- 147
+> -- 80
 < -- 0
-+ -- 11
-- -- 7
-* -- 38
-:= -- 96
-add.period$ -- 4
-call.type$ -- 4
-change.case$ -- 4
++ -- 32
+- -- 22
+* -- 128
+:= -- 276
+add.period$ -- 9
+call.type$ -- 10
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 25
-empty$ -- 79
-format.name$ -- 7
-if$ -- 145
+cite$ -- 16
+duplicate$ -- 93
+empty$ -- 216
+format.name$ -- 22
+if$ -- 438
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 1
-newline$ -- 15
-num.names$ -- 4
-pop$ -- 26
+int.to.str$ -- 10
+missing$ -- 6
+newline$ -- 33
+num.names$ -- 10
+pop$ -- 64
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 15
+skip$ -- 47
 stack$ -- 0
-substring$ -- 0
-swap$ -- 1
+substring$ -- 45
+swap$ -- 16
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 4
-width$ -- 5
-write$ -- 34
+warning$ -- 6
+while$ -- 17
+width$ -- 12
+write$ -- 81
+(There were 6 warnings)

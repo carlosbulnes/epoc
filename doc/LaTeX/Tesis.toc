@@ -1,11 +1,11 @@
 \select@language {spanish}
-\contentsline {chapter}{Introducci\'on}{1}
-\contentsline {section}{Justificaci\'on}{2}
-\contentsline {section}{Objetivos}{3}
-\contentsline {subsection}{Objetivo General}{3}
-\contentsline {subsection}{Objetivos Particulares}{3}
-\contentsline {section}{Antecedentes}{4}
-\contentsline {chapter}{Dise\~no}{5}
-\contentsline {chapter}{Desarrollo}{6}
-\contentsline {chapter}{Conclusi\'on y trabajo futuro}{7}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{8}
+\contentsline {chapter}{Introducci\'on}{1}{chapter*.2}
+\contentsline {section}{Justificaci\'on}{2}{section*.3}
+\contentsline {section}{Objetivos}{3}{section*.4}
+\contentsline {subsection}{Objetivo General}{3}{section*.5}
+\contentsline {subsection}{Objetivos Particulares}{3}{section*.6}
+\contentsline {section}{Antecedentes}{4}{section*.7}
+\contentsline {chapter}{Dise\~no}{6}{chapter*.8}
+\contentsline {chapter}{Desarrollo}{7}{chapter*.9}
+\contentsline {chapter}{Conclusi\'on y trabajo futuro}{8}{chapter*.10}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{9}{chapter*.10}

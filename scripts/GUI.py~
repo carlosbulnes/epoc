@@ -94,10 +94,10 @@ class Ui_EpocGUI(object):
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
         self.textBrowser.setReadOnly(True)
 
-        self.textNombrePrueba = QtGui.QTextEdit(self.centralwidget)
+        self.textEdit_2 = QtGui.QTextEdit(self.centralwidget)
 
-        self.textNombrePrueba.setGeometry(QtCore.QRect(780, 120, 281, 21))
-        self.textNombrePrueba.setObjectName(_fromUtf8("textEdit_2"))
+        self.textEdit_2.setGeometry(QtCore.QRect(780, 120, 281, 21))
+        self.textEdit_2.setObjectName(_fromUtf8("textEdit_2"))
         self.label = QtGui.QLabel(self.centralwidget)
 
         self.label.setGeometry(QtCore.QRect(780, 100, 141, 16))

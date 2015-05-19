@@ -4,6 +4,20 @@
 C.~Brocious and K.~Machulis, ``Emokit.'' \url{http://www.openyou.org}, May
   2015.
 
+\bibitem{2012bci}
+K.~Roebuck, {\em Brain-Computer Interface: High-impact Emerging Technology -
+  What You Need to Know: Definitions, Adoptions, Impact, Benefits, Maturity,
+  Vendors}.
+\newblock Emereo Publishing, 2012.
+
+\bibitem{img:invasive-bci}
+V.~Autores, ``neurogadget.com.''
+  \url{http://neurogadget.com/2011/04/08/implanted-bci-detects-when-patients-t%
+hink-of-specific-sounds/1780}, May 2015.
+
+\bibitem{emotiv:Online}
+V.~Autores, ``emotiv.com.'' \url{https://emotiv.com/}, May 2015.
+
 \bibitem{Emotiv:Wiki:Online}
 V.~Autores, ``Emotiv systems.''
   \url{http://en.wikipedia.org/wiki/Emotiv_Systems}, May 2015.
@@ -14,8 +28,8 @@ K.~Stytsenko, E.~Jablonskis, and C.~Prahm, ``Evaluation of consumer eeg device
 
 \bibitem{G-TEC:Online}
 V.~Autores, ``G-tec biosignal amplifier g.bsamp.''
-  \url{http://www.gtec.at/Products/Hardware-and-Accessories/g.BSamp-Specs-Features},
-  May 2015.
+  \url{http://www.gtec.at/Products/Hardware-and-Accessories/g.BSamp-Specs-Feat%
+ures}, May 2015.
 
 \bibitem{ROS:Wiki:Online}
 V.~Autores, ``Ros.org.'' \url{http://wiki.ros.org/es}, May 2015.

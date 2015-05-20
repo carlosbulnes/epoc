@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2015.2.21)  19 MAY 2015 01:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2015.2.21)  19 MAY 2015 23:48
 entering extended mode
  %&-line parsing enabled.
 **Tesis.tex
@@ -172,14 +172,17 @@ File: img/epoc.png Graphic file (type png)
 <use img/epoc.png> [4
 
  <./img/bci1.jpg>] [5 <./img/epoc.png>]) [6]
-(./text/Diseno.tex) [7
+(./text/Diseno.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 9.
+) [7
 
 
-] (./text/Desarrollo.tex) [8
+] [8] (./text/Desarrollo.tex) [9
 
 
-] (./text/Conclusiones.tex)
-[9
+]
+(./text/Conclusiones.tex) [10
 
 
 ] (./Tesis.bbl
@@ -194,27 +197,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--17
 cific-[]sounds / 1780$\OT1/cmr/m/n/12 , May
  []
 
-[10
+[11
 
 
-]) [11] (./Tesis.aux) ) 
+]) [12] (./Tesis.aux) ) 
 Here is how much of TeX's memory you used:
- 1882 strings out of 495061
- 23460 string characters out of 1182621
- 83619 words of memory out of 3000000
- 5039 multiletter control sequences out of 15000+50000
+ 1883 strings out of 495061
+ 23474 string characters out of 1182621
+ 82619 words of memory out of 3000000
+ 5040 multiletter control sequences out of 15000+50000
  10231 words of font info for 36 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 25i,7n,27p,1154b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 25i,8n,27p,1165b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Tesis.pdf (15 pages, 320132 bytes).
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
+i12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Tesis.pdf (16 pages, 353197 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

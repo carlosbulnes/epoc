@@ -4,15 +4,34 @@
 
 \indent La Universidad Veracruzana adqurió un Emotiv EPOC en 2014 para el laboratorio de robótica donde los alumnos de la Facultad de Ingeniería participan en diferentes proyectos tecnológicos. Este trabajo de tesis contribuye a un proyecto donde se controlará un robot por medio de la mente a través del Emotiv EPOC. Con el proyecto resultante de este trabajo se tendrá una interfaz la cual graficará las señales del Emotiv EPOC además de tener la capacidad de grabar los datos obtenidos cada vez que se ejecute un ``experimento'' obteniendo un archivo separado por comas.
 \\ \indent Al momento de la investigación se encontraron algunos software que mostraban la información obtenida de forma gráfica, sin embargo el principal inconveniente de estos era el desfase entre los datos que se estaban obteniendo y su graficación. Para atacar ese problema en este proyecto se utilizó un framework llamado ROS. ROS (Robot Operating System)\cite{ROS:Wiki:Online} provee librerías y herramientas para ayudar a los desarrolladores de software a crear aplicaciones para robots. ROS provee abstracción de hardware, controladores de dispositivos, librerías, herramientas de visualización, comunicación por mensajes, administración de paquetes y más. ROS está bajo la licencia open source, BSD. En este proyecto se utilizó ROS para crear un escenario de comunicación en tiempo real, donde el Emokit\cite{emokit} publica a través de mensajes los datos obtenidos del Epoc así mismo el nuevo software leerá los mensajes publicados en ROS para obtener los datos para graficarlos y generar el ``log'', todo esto ya en tiempo real.
-\\ \indent Además de ROS el nuevo software se desarrolló en Python, utilizando las librerias PyQt y matplotlib. Python es un lenguaje de programación interpretado, interactivo y orientado a objetos que provee estructuras de datos de alto nivel como listas y diccionarios, módulos, clases, excepciones, manejo automático de memoria, etc. Además es un lenguaje poderoso y multi propósito que cuenta con una sintaxis simple y elegante\cite{sanner1999python}. Para la creación de la interfaz se decidió utlizar el framework QT integrado a Python mediante PyQt. PyQt un binding\footnote{Adaptación de una biblioteca para ser usada en un lenguaje de programación distinto de aquél en el que ha sido escrita.} de QT para Python v2 y v3 que puede ser ejecutado en todas las plataformas soportadas por QT incluyendo Windows, MacOS/X y Linux. Está implementada por medio de módulos de Python contenidos en más de 620 clases. Finalmente la graficación se llevó a cabo con matplotlib. matplotlib es una libreria de Python para graficación 2D que produce figuras de calidad en una variedad de formatos y entornos interactivos a través de distintas plataformas. matplotlib puede ser usado en scripts de Python, MATLAB, Mathematica, servidores de aplicaciones web y en herramientas de interfaz gráfica de usuario.
+\\ \indent Además de ROS el nuevo software se desarrolló en Python, utilizando las librerías PyQt y matplotlib. Python es un lenguaje de programación interpretado, interactivo y orientado a objetos que provee estructuras de datos de alto nivel como listas y diccionarios, módulos, clases, excepciones, manejo automático de memoria, etc. Además es un lenguaje poderoso y multi propósito que cuenta con una sintaxis simple y elegante\cite{sanner1999python}. Para la creación de la interfaz se decidió utlizar el framework QT integrado a Python mediante PyQt. PyQt un binding\footnote{Adaptación de una biblioteca para ser usada en un lenguaje de programación distinto de aquél en el que ha sido escrita.} de QT para Python v2 y v3 que puede ser ejecutado en todas las plataformas soportadas por QT incluyendo Windows, MacOS/X y Linux. Está implementada por medio de módulos de Python contenidos en más de 620 clases. Finalmente la graficación se llevó a cabo con matplotlib. matplotlib es una librería de Python para graficación 2D que produce figuras de calidad en una variedad de formatos y entornos interactivos a través de distintas plataformas. matplotlib puede ser usado en scripts de Python, MATLAB, Mathematica, servidores de aplicaciones web y en herramientas de interfaz gráfica de usuario.
 \\ \indent El criterio para seleccionar los lenguajes, frameworks y bibliotecas mencionados fue el de la filosofía del software libre, siendo las tecnologías seleccionadas libres y además multiplataforma\footnote{Windows no es soportado por ROS a la fecha de la publicación, ver http://wiki.ros.org/ROS/Installation}. La aplicación resultante por lo tanto es libre y multiplataforma.
-Explicacion de la interfaz
-Explicacion de las gráficas
-Explicacion del log
-Panorama general del funcionamiento
-ROS, talker -> msg -> listener
-Adaptación de ROS al emokit -> software no dependiente de emokit.
+EL software cuenta con una interfaz sencilla; cuenta con 14 gráficas donde se mostrarán cada una de las señales recibidas, tres botones para reproducir, pausar y detener la graficación de las señales y un cuadro de texto para escribir el nombre con el que se generará el archivo de registro y un campo de texto que sirve para visualizar cada paquete de señales que se va recibiendo.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{img/interfaz.png}
+%\includegraphics[scale=1,bb=0 0 30 30]{img/bci1.png}
+\caption{Interfaz} \label{fig:interfaz}
+\end{figure}
 
+\indent Cada gráfica muestra cada una de las señales recibidas. Las gráficas se refrescan cada 30 señales recibidas limitadas principalmente por el tamaño de la interfaz. El espacio de texto para el log por otra parte muestra una lista con las 14 señales recibidas en x tiempo, es decir, cada vez que se recibe un mensaje se mostrará una lista en el cuadro de texto y se dibujará un punto nuevo en cada una de las 14 gráficas. Por último los botones controlan el dibujado en la gráfica y en el cuadro log sin embargo el software seguirá leyendo la información de las señale se encuentre en pausa o detenida, los botones por lo tanto controlan lo que el usuario necesita ver y registrar al momento que está utilizando la interfaz.
+\\ \indent Para entender mejor como la interfaz funciona e interactúa con el emokit a través de ROS hay que explicar los términos Topics, mensajes, publisher y subscriber.
+ROS trabaja como un servidor el cual se ejecuta para que se puedan establecer todas las comunicaciones entre los procesos, dentro de una interacción de procesos intervienen tres factores:
+\begin{itemize}
+\item Mensajes: Son archivos donde se definen que datos y de que tipo serán comunicados por medio de el, cada archivo es un paquete que contiene diferentes tipos y nombres de variables.
+\item Publishers: Son los programas o procesos que se encargarán de publicar información en los mensajes para que estos sean leídos por uno o varios subcribers.
+\item Subcribers: Son los programas o procesos que leen los mensajes publicados por los publishers.
+\end{itemize}
+Este esquema de funcionamiento es fácilmente comparable con el clásico esquema de comunicación del habla donde contamos con un emisor(publisher), un mensaje y uno o varios receptores(subcribers).
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{img/ros-comunicacion.png}
+\caption{Comunicación ROS} \label{fig:ros-comunicacion}
+\end{figure}
+%Panorama general del funcionamiento
+%ROS, talker -> msg -> listener
+%Adaptación de ROS al emokit -> software no dependiente de emokit.
+\\ \indent Gracias a ROS el software resultante en este trabajo no se encuentra limitado a trabajar únicamente con el emokit. El software solo lee los mensajes publicados por ROS independientemente de quien los esté enviando. Podemos ver esto como una ventaja ya que permite que el software se use en conjunto con cualquier otro programa o proceso que publique el mensaje que el software lee.
 
 \begin{comment}
 \\ \indent Para la construcción del software presentado en este trabajo se utilizó:

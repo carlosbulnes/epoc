@@ -37,13 +37,7 @@ def talker():
     pub = rospy.Publisher('mensaje', Frecuencias)
     rospy.init_node('talker', anonymous=True, disable_signals=False)
     rate = rospy.Rate(20) # 10hz
-    
-    # Inicializacion Emokit
-    #headset = Emotiv()
-    #gevent.spawn(headset.setup)
-    #gevent.sleep(0)
-      
-    #try:
+
     while not rospy.is_shutdown():
         data = []
         hello_str = "%s" % rospy.get_time()
@@ -55,10 +49,7 @@ def talker():
         
         pub.publish(data)
         rate.sleep()
-    #except KeyboardInterrupt:
-    #    headset.close()
-    #finally:
-    #    headset.close()
+
         
 if __name__ == '__main__':
     headset = Emotiv()

@@ -6,7 +6,7 @@
 \contentsline {subsection}{Objetivos Particulares}{3}{section*.6}
 \contentsline {section}{Antecedentes}{4}{section*.7}
 \contentsline {chapter}{Dise\~no}{7}{chapter*.8}
-\contentsline {chapter}{Implementaci\'on y Resultados}{10}{chapter*.9}
-\contentsline {chapter}{Conclusi\'on y trabajo futuro}{11}{chapter*.10}
-\contentsline {section}{Trabajo Futuro}{11}{section*.11}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{12}{section*.11}
+\contentsline {chapter}{Implementaci\'on y Resultados}{11}{chapter*.9}
+\contentsline {chapter}{Conclusi\'on y trabajo futuro}{19}{chapter*.10}
+\contentsline {section}{Trabajo Futuro}{19}{section*.11}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{20}{chapter*.12}

@@ -13,24 +13,24 @@ if platform.system() == "Windows":
     import socket  # Needed to prevent gevent crashing on Windows. (surfly / gevent issue #459)
 import gevent
 
-def obtenerData(data):
+def obtenerDatos(datos):
     packet = headset.dequeue()
     #print packet.gyro_x, packet.gyro_y
-    data.append(packet.sensors['F3']['value'])
-    data.append(packet.sensors['FC5']['value'])
-    data.append(packet.sensors['AF3']['value'])
-    data.append(packet.sensors['F7']['value'])
-    data.append(packet.sensors['T7']['value'])
-    data.append(packet.sensors['P7']['value'])
-    data.append(packet.sensors['O1']['value'])
-    data.append(packet.sensors['O2']['value'])
-    data.append(packet.sensors['P8']['value'])
-    data.append(packet.sensors['T8']['value'])
-    data.append(packet.sensors['F8']['value'])
-    data.append(packet.sensors['AF4']['value'])
-    data.append(packet.sensors['FC6']['value'])
-    data.append(packet.sensors['F4']['value'])
-    print data
+    datos.append(packet.sensors['F3']['value'])
+    datos.append(packet.sensors['FC5']['value'])
+    datos.append(packet.sensors['AF3']['value'])
+    datos.append(packet.sensors['F7']['value'])
+    datos.append(packet.sensors['T7']['value'])
+    datos.append(packet.sensors['P7']['value'])
+    datos.append(packet.sensors['O1']['value'])
+    datos.append(packet.sensors['O2']['value'])
+    datos.append(packet.sensors['P8']['value'])
+    datos.append(packet.sensors['T8']['value'])
+    datos.append(packet.sensors['F8']['value'])
+    datos.append(packet.sensors['AF4']['value'])
+    datos.append(packet.sensors['FC6']['value'])
+    datos.append(packet.sensors['F4']['value'])
+    print datos
     gevent.sleep(0)    
 
 def talker(): 
@@ -39,15 +39,15 @@ def talker():
     rate = rospy.Rate(20) # 10hz
 
     while not rospy.is_shutdown():
-        data = []
+        datos = []
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
         
-        obtenerData(data)
+        obtenerDatos(datos)
         #for i in range(14):
-        #    data.append(np.random.random())
+        #    datos.append(np.random.random())
         
-        pub.publish(data)
+        pub.publish(datos)
         rate.sleep()
 
         

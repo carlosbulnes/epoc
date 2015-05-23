@@ -32,6 +32,12 @@ Este esquema de funcionamiento es fácilmente comparable con el clásico esquema d
 %ROS, talker -> msg -> listener
 %Adaptación de ROS al emokit -> software no dependiente de emokit.
 \\ \indent Gracias a ROS el software resultante en este trabajo no se encuentra limitado a trabajar únicamente con el emokit. El software solo lee los mensajes publicados por ROS independientemente de quien los esté enviando. Podemos ver esto como una ventaja ya que permite que el software se use en conjunto con cualquier otro programa o proceso que publique el mensaje que el software lee.
+\\ \indent Para ilustra mejor la interacción entre los componentes involucrados se presenta el diagrama de secuencias:
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.8\textwidth]{img/diagrama-secuencia.png}
+\caption{Diagrama de Secuencia} \label{fig:diagrama-secuencia}
+\end{figure}
 
 \begin{comment}
 \\ \indent Para la construcción del software presentado en este trabajo se utilizó:

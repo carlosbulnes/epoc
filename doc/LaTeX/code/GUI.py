@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'epoc3.ui'
-#
-# Created: Tue Apr 14 21:19:24 2015
-#      by: PyQt4 UI code generator 4.9.1
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt4 import QtCore, QtGui
 from matplotlibwidgetFile import matplotlibWidget
 
@@ -65,39 +58,39 @@ class Ui_EpocGUI(object):
         self.widget_14.setGeometry(QtCore.QRect(250, 690, 260, 180))
         self.widget_14.setObjectName(_fromUtf8("widget_14"))
 
-        self.pauseButton = QtGui.QPushButton(self.centralwidget)
-        self.pauseButton.setGeometry(QtCore.QRect(780, 180, 85, 27))
-        self.pauseButton.setText(_fromUtf8(""))
+        self.botonPausar = QtGui.QPushButton(self.centralwidget)
+        self.botonPausar.setGeometry(QtCore.QRect(780, 180, 85, 27))
+        self.botonPausar.setText(_fromUtf8(""))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8("img/pause.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pauseButton.setIcon(icon)
-        self.pauseButton.setObjectName(_fromUtf8("pauseButton"))
+        self.botonPausar.setIcon(icon)
+        self.botonPausar.setObjectName(_fromUtf8("botonPausar"))
         
-        self.stopButton = QtGui.QPushButton(self.centralwidget)
-        self.stopButton.setGeometry(QtCore.QRect(980, 180, 85, 27))
-        self.stopButton.setText(_fromUtf8(""))
+        self.botonDetener = QtGui.QPushButton(self.centralwidget)
+        self.botonDetener.setGeometry(QtCore.QRect(980, 180, 85, 27))
+        self.botonDetener.setText(_fromUtf8(""))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(_fromUtf8("img/stop.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.stopButton.setIcon(icon1)
-        self.stopButton.setObjectName(_fromUtf8("stopButton"))
+        self.botonDetener.setIcon(icon1)
+        self.botonDetener.setObjectName(_fromUtf8("botonDetener"))
         
-        self.playButton = QtGui.QPushButton(self.centralwidget)
-        self.playButton.setGeometry(QtCore.QRect(880, 180, 85, 27))
-        self.playButton.setText(_fromUtf8(""))
+        self.botonEjecutar = QtGui.QPushButton(self.centralwidget)
+        self.botonEjecutar.setGeometry(QtCore.QRect(880, 180, 85, 27))
+        self.botonEjecutar.setText(_fromUtf8(""))
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(_fromUtf8("img/play.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.playButton.setIcon(icon2)
-        self.playButton.setObjectName(_fromUtf8("playButton"))
+        self.botonEjecutar.setIcon(icon2)
+        self.botonEjecutar.setObjectName(_fromUtf8("botonEjecutar"))
         self.textBrowser = QtGui.QPlainTextEdit(self.centralwidget)
 
         self.textBrowser.setGeometry(QtCore.QRect(760, 290, 331, 500))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
         self.textBrowser.setReadOnly(True)
 
-        self.textEdit_2 = QtGui.QTextEdit(self.centralwidget)
+        self.textNombrePrueba = QtGui.QTextEdit(self.centralwidget)
 
-        self.textEdit_2.setGeometry(QtCore.QRect(780, 120, 281, 21))
-        self.textEdit_2.setObjectName(_fromUtf8("textEdit_2"))
+        self.textNombrePrueba.setGeometry(QtCore.QRect(780, 120, 281, 21))
+        self.textNombrePrueba.setObjectName(_fromUtf8("textEdit_2"))
         self.label = QtGui.QLabel(self.centralwidget)
 
         self.label.setGeometry(QtCore.QRect(780, 100, 141, 16))

@@ -19,9 +19,9 @@ class GUIForm(QtGui.QWidget):
         self.frecuencias = [[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
         self.listener()
 
-        QtCore.QObject.connect(self.ui.playButton, QtCore.SIGNAL('clicked()'), self.habilitaGraficar)
-        QtCore.QObject.connect(self.ui.stopButton, QtCore.SIGNAL('clicked()'), self.detenerROS)
-        QtCore.QObject.connect(self.ui.pauseButton, QtCore.SIGNAL('clicked()'), self.pausaGraficar)
+        QtCore.QObject.connect(self.ui.botonEjecutar, QtCore.SIGNAL('clicked()'), self.habilitaGraficar)
+        QtCore.QObject.connect(self.ui.botonDetener, QtCore.SIGNAL('clicked()'), self.detenerROS)
+        QtCore.QObject.connect(self.ui.botonPausar, QtCore.SIGNAL('clicked()'), self.pausaGraficar)
 
     def habilitaGraficar(self):
         """ Habilita la graficación por medio de la bandera """

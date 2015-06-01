@@ -3,32 +3,7 @@
 \addcontentsline{toc}{section}{Antecedentes}
 
 El software desarrollado en este trabajo toma como base al emokit\cite{emokit} el cuál forma parte de OpenYou\cite{emokit}. El Emokit lee, descifra e interpreta la información enviada por el Emotiv EPOC, el cual es un dispositivo ``Interfaz Cerebro-Máquina'' (BCI), tales como nivel de batería de la diadema, intensidad de la señal, y las 14 lecturas realizadas por la diadema; este software actualmente solo imprime a nivel terminal dichos datos.
-\\ Una ``Interfaz Cerebro-Máquina''\cite{2012bci} (BCI) es un medio de comunicación directo entre el cerebro y un dispositivo externo. Los BCI están normalmente dirigidos a asistir, aumentar y reparar la habilidad cognitiva y las funciones sensoriomotoras.
-\\ Las inventigaciones con los BCI comenzaron en 1970 en la Universidad de Los Ángeles California(UCLA) bajo el subsidio de Fundación Nacional de Ciencia contratados por la Agencia de Proyectos de Investigación Avanzados de Defensa (DARPA). La publicación hecha después de la investigación marcó la primera aparición de la expresión ``Interfaz Cerebro-Máquina'' en la literatura científica. En la actualidad existen tres tipos de BCI:
-\begin{itemize}
-\item BCI invasivos: Son implantados en la materia gris del cerebro por medio de una neurocirugía, debido a que se encuentran implantados en el cerebro los BCI invasivos producen la mejor calidad de las señales pero pueden tener consecuencias negativas al portador a futuro.
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.4\textwidth]{img/bci1.jpg}
-%\includegraphics[scale=1,bb=0 0 30 30]{img/bci1.jpg}
-\caption{BCI invasivo\cite{img:invasive-bci}} \label{fig:bci1}
-\end{figure}
-
-\item BCI semi invasivos: Son implantados dentro del cráneo pero sin tocar la corteza cerebral. Producen una mejor señal que los BCI no invasivos y tienen menor riesgo de causar daños al cerebo que los BCI invasivos.
-
-\item BCI no invasivos: Los implantes no invasivos son colocados en el cuero cabelludo. Los BCI no invasivos producen señales débiles porque el cráneo amortigua las señales, dispersando las ondas electromagnéticas creadas por las neuronas.
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.8\textwidth]{img/epoc.png}
-%\includegraphics[scale=1,bb=0 0 30 30]{img/epoc.png}
-\caption{BCI no invasivo\cite{emotiv:Online}} \label{fig:bci2}
-\end{figure}
-
-\end{itemize}
-
-\input{text/BCI-invasivos}\newpage\cleardoublepage
-
-
+\input{text/Antecedentes-BCI}
 
 El Emotiv Epoc es BCI que fue creado con el propósito de ser un periférico para juegos en Windows, OS X y Linux\cite{Emotiv:Wiki:Online}, cuenta con 14 electrodos y funciona como dispositivo de entrada. En 2011 Kirill Stytsenko, et al.\cite{stytsenko2011evaluation} realizaron un análisis del Emotiv EPOC para la CogSci Conference. Emotiv EPOC es un BCI de bajo costo basado en la tecnología EEG. Cuenta con 14 electrodos montados en una diadema inalámbrica que se coloca sin esfuerzo y se conecta a la computadora. Originalmente fue creada para los juegos de computadora pero la ``research edition'' permite el acceso a los datos para su análisis lo que abre nuevas posibilidades a la ciencia para realizar nuevos experimentos o integrarlo a los ya existentes. En dicho estudio se someten a diferentes pruebas al Emotiv EPOC y al G-TEC\cite{G-TEC:Online}. Al compararlos se obtiene que la información en general es igual, pero la señal es más clara e intensa en el G-TEC. Uno de los desafíos encontrados es la creación de software de grabación para ambos dispositivos.
 \\ Job Ramón de la O Chávez en su tesis Interfaz Cerebro - Computadora para el Control de un Cursor Basado en Ondas\cite{intcerebro} plantea una interfaz que permita la comunicación entre el usuario y la computadora, haciendo uso de sus ondas cerebrales, para el control de un cursor en pantalla mediante comandos obtenidos de las lecturas de un amplificador de ondas cerebrales.

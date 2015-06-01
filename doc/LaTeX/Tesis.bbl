@@ -10,22 +10,38 @@ K.~Roebuck, {\em Brain-Computer Interface: High-impact Emerging Technology -
   Vendors}.
 \newblock Emereo Publishing, 2012.
 
-\bibitem{img:invasive-bci}
-V.~Autores, ``neurogadget.com.''
-  \url{http://neurogadget.com/2011/04/08/implanted-bci-detects-when-patients-t%
-hink-of-specific-sounds/1780}, May 2015.
-
-\bibitem{emotiv:Online}
-V.~Autores, ``emotiv.com.'' \url{https://emotiv.com/}, May 2015.
-
 \bibitem{invasiveBCI1}
 G.~M.~L. Anupama. H.~S, Cauvery. N.~K, ``Brain computer interface and its types
   - a study,'' 2012.
+
+\bibitem{invasiveBCI2}
+T.~N. Lal, T.~Hinterberger, G.~Widman, M.~Schr{\"o}der, J.~Hill, W.~Rosenstiel,
+  C.~Elger, B.~Sch{\"o}lkopf, and N.~Birbaumer, ``Methods towards invasive
+  human brian computer interfaces,'' 2005.
 
 \bibitem{SCP:Online}
 V.~Autores, ``Biofeedback federation of europe.''
   \url{https://biofeedbackfederationofeurope.blogspot.mx/2014/04/introduction-%
 to-slow-cortical.html}, May 2015.
+
+\bibitem{birbaumer2006breaking}
+N.~Birbaumer, ``Breaking the silence: brain--computer interfaces (bci) for
+  communication and motor control,'' {\em Psychophysiology}, vol.~43, no.~6,
+  pp.~517--532, 2006.
+
+\bibitem{asimbaya2014diseno}
+J.~D. Asimbaya~Molina and J.~A. Suasnavas~Tip{\'a}n, ``Dise{\~n}o e
+  implementaci{\'o}n de un prototipo brain computer interface (bci), para la
+  manipulaci{\'o}n de una pinza rob{\'o}tica utilizando comunicaci{\'o}n
+  bluetooth.,'' 2014.
+
+\bibitem{gordo2009interfaz}
+M.~{\'A}.~L. Gordo, ``Interfaz bci de altas prestaciones basada en la
+  detecci{\'o}n y procesamiento de la actividad cerebral (bci-depracap),''
+  2009.
+
+\bibitem{emotiv:Online}
+V.~Autores, ``emotiv.com.'' \url{https://emotiv.com/}, May 2015.
 
 \bibitem{Emotiv:Wiki:Online}
 V.~Autores, ``Emotiv systems.''

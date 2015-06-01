@@ -5,9 +5,11 @@
 \contentsline {subsection}{Objetivo General}{3}{section*.5}
 \contentsline {subsection}{Objetivos Particulares}{3}{section*.6}
 \contentsline {section}{Antecedentes}{4}{section*.7}
-\contentsline {subsection}{BCI Invasivos}{5}{section*.8}
-\contentsline {chapter}{Dise\~no}{8}{chapter*.9}
-\contentsline {chapter}{Implementaci\'on y Resultados}{12}{chapter*.10}
-\contentsline {chapter}{Conclusi\'on y trabajo futuro}{13}{chapter*.11}
-\contentsline {section}{Trabajo Futuro}{13}{section*.12}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{14}{chapter*.13}
+\contentsline {subsection}{BCI}{4}{section*.8}
+\contentsline {subsubsection}{BCI Invasivos}{5}{section*.12}
+\contentsline {subsubsection}{BCI no Invasivos}{6}{section*.13}
+\contentsline {chapter}{Dise\~no}{11}{chapter*.14}
+\contentsline {chapter}{Implementaci\'on y Resultados}{15}{chapter*.15}
+\contentsline {chapter}{Conclusi\'on y trabajo futuro}{16}{chapter*.16}
+\contentsline {section}{Trabajo Futuro}{16}{section*.17}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{17}{chapter*.18}

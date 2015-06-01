@@ -1,0 +1,37 @@
+\subsubsection*{BCI no Invasivos}
+\markboth{\MakeUppercase{BCI no Invasivos}}{}
+\addcontentsline{toc}{subsubsection}{BCI no Invasivos}
+
+Los implantes no invasivos son colocados en el cuero cabelludo. Los BCI no invasivos producen señales débiles porque el cráneo amortigua las señales, dispersando las ondas electromagnéticas creadas por las neuronas.
+\\
+Javier Danilo et al. describen es su trabajo de titulación\cite{asimbaya2014diseno} el diseño e implementación de un prototipo de BCI para manipular una pinza robótica. A través de electrodos colocados en el cuero cabelludo de una persona y utilizando los principios de la electroencefalografía (EEG) obtienen señales eléctricas pequeñas las cuales someten a etapas de amplificación y filtrado de ruido. Para la adquisición de las señales utilizan la plataforma Arduino, y haciendo uso de la comunicación serial con el software MATLAB para la visualización en la computadora de las señales obtenidas. Posteriormente se identificarán los pulsos eléctricos que son generados por un estímulo visual y que serán los que determinen la activación de un mecanismo. Este mecanismo manipulará a un dispositivo a distancia
+que en este caso será una pinza robótica.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.5\textwidth]{img/bci-brazo-robotico.png} \label{fig:bci-brazo-robotico}
+\caption{La imagen describe el diseño del prototipo de Danilo\cite{asimbaya2014diseno} }
+\end{figure}
+\\
+Miguel Ángel López en su tesis doctoral \cite{gordo2009interfaz} dentro de la clasificación de los BCI describe a los BCI no Invasivos como aquellos métodos que no suponen riesgo alguno para el paciente. Entre los BCI no invasivos se encuentran los EEG, MEG, fMRI y NIRS destacando a los EEG como la alternativa más importante, sencilla y económica de la actualidad. La EEG se basa en el principio de que las corrientes de naturaleza iónica, presentes en la corteza cerebral, producto de la actividad poblaciones de neuronas pueden ser registradas para su análisis mediante el uso de electrodos superficiales extracraneales. Existen también distintas técnicas para la fijación de los electrodos. Una técnica consiste en el uso de un gorro con una serie de agujeros donde ajustar mediante rosca los electrodos, esta técnica tiene el inconveniente de tener que ajustar uno a uno cada electrodo, junto con un gel electrolito. Una versión mejorada, Electrocap, dispone de los electrodos ya integrados en el gorro y de un sistema cómodo de aplicación del gel. Existen también redes de sensores, como el SensorNet de EGI. Este último consiste en una red elástica que se ajusta a la cabeza de cada sujeto con un número muy elevado de sensores (hasta 250).
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=.6]{img/colocacion-bci1.png} \label{fig:colocacion-bci1}
+\includegraphics[scale=1.35]{img/colocacion-bci2.png} \label{fig:colocacion-bci2}
+\includegraphics[scale=.5]{img/colocacion-bci3.png} \label{fig:colocacion-bci3}
+\caption{Sistemas de sujeción de electronos EEG.De izquierda a derecha. Electrodos usados en un gorro EEG con agujeros y rosca, el Electrocap y el SensorNet de EGI. Tomadas de \cite{gordo2009interfaz}}
+\end{figure}
+\\
+El uso de redes o sensores resultan úiles para aplicaciones médicas sin embargo esas interfaces resultan poco atractivas en el ámbito del entretenimiento. Empresas como NeuroSky y Emotiv han desarrollado cascos para el sector del entretenimiento que ofrecen un sistema rápido, cómodo y portatil.
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=.5]{img/emotiv.png} 
+\includegraphics[scale=.9]{img/neurosky.png} 
+\caption{Sistemas comerciales BCI: Emotiv a la izquierda y NeuroSky a la derecha. Tomado de \cite{gordo2009interfaz}} \label{fig:bci-comerciales} 
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{img/epoc.png}
+%\includegraphics[scale=1,bb=0 0 30 30]{img/epoc.png}
+\caption{BCI no invasivo\cite{emotiv:Online}} \label{fig:bci2}
+\end{figure}

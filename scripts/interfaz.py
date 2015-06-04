@@ -13,12 +13,21 @@ class GUIForm(QtGui.QWidget):
  
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self,parent)
+        
+        # Inicialización de la interfaz
         self.ui = Ui_EpocGUI()
         self.ui.setupUi(self)
+
+        # Bandera para permite/impedir graficación
         self.grafica = False
+
+        # Lista de frecuencias
         self.frecuencias = [[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+        
+        # Comienza a escuchar los mensajes en ROS
         self.listener()
 
+        # Definición de los botones
         QtCore.QObject.connect(self.ui.botonEjecutar, QtCore.SIGNAL('clicked()'), self.habilitaGraficar)
         QtCore.QObject.connect(self.ui.botonDetener, QtCore.SIGNAL('clicked()'), self.detenerROS)
         QtCore.QObject.connect(self.ui.botonPausar, QtCore.SIGNAL('clicked()'), self.pausaGraficar)
@@ -31,6 +40,7 @@ class GUIForm(QtGui.QWidget):
     def graficar(self, frecuencias):
         """ Funcion que manda los datos a graficar """
 
+        # Añade los puntos a la gráfica
         self.ui.widget.canvas.ax.plot(frecuencias[0])
         self.ui.widget_2.canvas.ax.plot(frecuencias[1])
         self.ui.widget_3.canvas.ax.plot(frecuencias[2])
@@ -46,6 +56,7 @@ class GUIForm(QtGui.QWidget):
         self.ui.widget_13.canvas.ax.plot(frecuencias[12])
         self.ui.widget_14.canvas.ax.plot(frecuencias[13])
         
+        # Realiza el dibujado en la gráfica
         self.ui.widget.canvas.draw()
         self.ui.widget_2.canvas.draw()
         self.ui.widget_3.canvas.draw()
@@ -62,18 +73,22 @@ class GUIForm(QtGui.QWidget):
         self.ui.widget_14.canvas.draw()
 
     def detenerROS(self):
-        """ Detiene la comunicacion ROS, no se puede revertir """
+        """ Detiene la graficación y genera el log """
 
         self.grafica = False
         self.generarLog()
 
     def pausaGraficar(self):
+        """ Pausa la graficación """
         self.grafica = False
 
     def generarLog(self):
         sleep(.1)
 
+        # Extracción del nombre del cuadro de texto
         nombre = self.ui.textNombrePrueba.toPlainText()
+        
+        # Valida que se haya ingresado un nombre de prueba
         if nombre:
             nombre = nombre + '_' + strftime("%d-%m-%y_%H:%M") + '.xls'
             file = open(nombre, 'w')
@@ -93,6 +108,8 @@ class GUIForm(QtGui.QWidget):
         if self.grafica:
             data = list(data.datos)
             
+            # La lista frecuencias va encolando las señales en cada iteración
+            # data contiene las 14 señales de la iteración actual
             self.frecuencias[0].append(data[0])
             self.frecuencias[1].append(data[1])
             self.frecuencias[2].append(data[2])
@@ -108,6 +125,7 @@ class GUIForm(QtGui.QWidget):
             self.frecuencias[12].append(data[12])
             self.frecuencias[13].append(data[13])
             
+            # Arma el texto para mostrarlo en el cuadro de log
             log = str(str(data[0]) + ', ' + str(data[1]) + ', ' + str(data[2]) + 
                       ', ' + str(data[3]) + ', ' + str(data[4]) + ', ' + str(data[5]) + 
                       ', ' + str(data[6]) + ', ' + str(data[7]) + ', ' + str(data[8]) + 
@@ -117,6 +135,7 @@ class GUIForm(QtGui.QWidget):
             self.ui.textBrowser.appendPlainText(log)
             self.ui.textBrowser.appendPlainText("")
 
+            # Resetea la lista de frecuencias y limpia las gráficas cuando la lista llega a los 30 elementos
             if len(self.frecuencias[0]) == 30:
                 self.frecuencias = [[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
                 self.ui.widget.canvas.ax.clear()

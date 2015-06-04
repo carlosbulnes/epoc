@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \BOOKMARK [0][-]{chapter*.2}{Introducci\363n}{}
 \BOOKMARK [1][-]{section*.3}{Justificaci\363n}{chapter*.2}
 \BOOKMARK [1][-]{section*.4}{Objetivos}{chapter*.2}
@@ -12,3 +13,17 @@
 \BOOKMARK [0][-]{chapter*.16}{Conclusi\363n y trabajo futuro}{}
 \BOOKMARK [1][-]{section*.17}{Trabajo Futuro}{chapter*.16}
 \BOOKMARK [0][-]{chapter*.18}{Bibliograf\355a}{}
+=======
+\BOOKMARK [0][-]{chapter*.2}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section*.3}{Justificaci\363n}{chapter*.2}% 2
+\BOOKMARK [1][-]{section*.4}{Objetivos}{chapter*.2}% 3
+\BOOKMARK [2][-]{section*.5}{Objetivo General}{section*.4}% 4
+\BOOKMARK [2][-]{section*.6}{Objetivos Particulares}{section*.4}% 5
+\BOOKMARK [1][-]{section*.7}{Antecedentes}{chapter*.2}% 6
+\BOOKMARK [2][-]{section*.8}{BCI Invasivos}{section*.7}% 7
+\BOOKMARK [0][-]{chapter*.9}{Dise\361o}{}% 8
+\BOOKMARK [0][-]{chapter*.10}{Implementaci\363n y Resultados}{}% 9
+\BOOKMARK [0][-]{chapter*.11}{Conclusi\363n y trabajo futuro}{}% 10
+\BOOKMARK [1][-]{section*.12}{Trabajo Futuro}{chapter*.11}% 11
+\BOOKMARK [0][-]{chapter*.13}{Bibliograf\355a}{}% 12
+>>>>>>> 2bb48a3917d6af5df74f8355ab3e3b05c573f701

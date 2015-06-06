@@ -7,7 +7,7 @@ import roslib; roslib.load_manifest('epoc')
 from epoc.msg import Frecuencias
 
 # Librerias de Emokit
-from emokit.emotiv import Emotiv
+from emotiv import Emotiv
 import platform
 if platform.system() == "Windows":
     import socket  # Needed to prevent gevent crashing on Windows. (surfly / gevent issue #459)
@@ -36,7 +36,7 @@ def obtenerDatos(datos):
 def talker(): 
     pub = rospy.Publisher('mensaje', Frecuencias)
     rospy.init_node('talker', anonymous=True, disable_signals=False)
-    rate = rospy.Rate(20) # 10hz
+    rate = rospy.Rate(10000) # 10hz
 
     while not rospy.is_shutdown():
         datos = []

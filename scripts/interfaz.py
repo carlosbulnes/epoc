@@ -72,7 +72,7 @@ class GUIForm(QtGui.QWidget):
         self.ui.widget_13.canvas.draw()
         self.ui.widget_14.canvas.draw()
 
-    def detenerROS(self):
+    def detenerGraficar(self):
         """ Detiene la graficación y genera el log """
 
         self.grafica = False

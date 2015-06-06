@@ -29,7 +29,7 @@ class GUIForm(QtGui.QWidget):
 
         # Definición de los botones
         QtCore.QObject.connect(self.ui.botonEjecutar, QtCore.SIGNAL('clicked()'), self.habilitaGraficar)
-        QtCore.QObject.connect(self.ui.botonDetener, QtCore.SIGNAL('clicked()'), self.detenerROS)
+        QtCore.QObject.connect(self.ui.botonDetener, QtCore.SIGNAL('clicked()'), self.detenerGraficar)
         QtCore.QObject.connect(self.ui.botonPausar, QtCore.SIGNAL('clicked()'), self.pausaGraficar)
 
     def habilitaGraficar(self):

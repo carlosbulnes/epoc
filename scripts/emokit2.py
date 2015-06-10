@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 # Librerias de ROS
 import rospy
@@ -8,11 +7,11 @@ import roslib; roslib.load_manifest('epoc')
 from epoc.msg import Frecuencias
 
 # Librerias de Emokit
-from emotiv import Emotiv
-import platform
-if platform.system() == "Windows":
-    import socket  # Needed to prevent gevent crashing on Windows. (surfly / gevent issue #459)
-import gevent
+#from emotiv import Emotiv
+#import platform
+#if platform.system() == "Windows":
+#    import socket  # Needed to prevent gevent crashing on Windows. (surfly / gevent issue #459)
+#import gevent
 
 def obtenerDatos(datos):
     """ Obtiene los datos leidos por el Emotiv Epoc y los almacena y retorna en la lista datos[] """
@@ -54,24 +53,27 @@ def talker():
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
         
-        obtenerDatos(datos) # Obtiene los datos del Epoc
-        
-        pub.publish(datos) # Publica el mensaje en ROS, el parametro debe ser del mismo tipo definido en el archivo de mensaje
+        #obtenerDatos(datos) # Obtiene los datos del Epoc
+        #for i in range(13):
+        #    datos.append(np.random.randn(1))
+
+        print np.random.randn(14)
+        pub.publish(np.random.randn(14)) # Publica el mensaje en ROS, el parametro debe ser del mismo tipo definido en el archivo de mensaje
         rate.sleep()
 
         
 if __name__ == '__main__':
     
     # Inicia la comunicacion con el Epoc por medio del Emokit
-    headset = Emotiv() 
-    gevent.spawn(headset.setup)
-    gevent.sleep(0)    
+    #headset = Emotiv() 
+    #gevent.spawn(headset.setup)
+    #gevent.sleep(0)    
     
     try:
         talker()
     except rospy.ROSInterruptException:
         pass
-    except KeyboardInterrupt:
-        headset.close()
-    finally:
-        headset.close()    
+    #except KeyboardInterrupt:
+    #    headset.close()
+    #finally:
+    #    headset.close()    

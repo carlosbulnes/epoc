@@ -118,7 +118,7 @@ class GUIForm(QtGui.QWidget):
         if self.grafica:
             data = list(data.datos)
             self.ocurrencias += 1
-            
+            '''
             # La lista frecuencias va encolando las señales en cada iteración
             # data contiene las 14 señales de la iteración actual
             self.frecuencias[0].append(data[0])
@@ -165,6 +165,7 @@ class GUIForm(QtGui.QWidget):
                 self.ui.widget_14.canvas.ax.clear()
 
             self.graficar(self.frecuencias)
+            '''
 
     def listener(self):
         """ Inicia la comunicacion ROS """

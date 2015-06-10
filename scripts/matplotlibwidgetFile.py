@@ -1,14 +1,19 @@
 from PyQt4 import QtGui
 import matplotlib
+matplotlib.use('TkAgg')
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
+import matplotlib.pyplot as plt
  
 from matplotlib.figure import Figure
+
+plt.show(block=False)
  
 class MplCanvas(FigureCanvas):
  
     def __init__(self):
-        self.fig = Figure()
-        self.ax = self.fig.add_subplot(111)
+        #self.fig = Figure()
+        #self.ax = self.fig.add_subplot(111)
+        self.fig, self.ax = plt.subplots()
  
         FigureCanvas.__init__(self, self.fig)
         FigureCanvas.setSizePolicy(self, QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Expanding)

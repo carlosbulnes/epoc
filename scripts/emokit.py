@@ -14,8 +14,12 @@ if platform.system() == "Windows":
 import gevent
 
 def obtenerDatos(datos):
+    """ Obtiene los datos leidos por el Emotiv Epoc y los almacena y retorna en la lista datos[] """
+    
+    # Obtiene el paquete del Epoc
     packet = headset.dequeue()
-    #print packet.gyro_x, packet.gyro_y
+    
+    # Obtiene los datos que vienen como parte del paquete obtenido
     datos.append(packet.sensors['F3']['value'])
     datos.append(packet.sensors['FC5']['value'])
     datos.append(packet.sensors['AF3']['value'])
@@ -33,28 +37,35 @@ def obtenerDatos(datos):
     print datos
     gevent.sleep(0)    
 
-def talker(): 
+def talker():
+    """ Funcion para publicar los mensajes en ROS """
+    
+    # Configura la funcion para que publique los mensajes.
+    # El primer parametro es el nombre para identificar el mensaje, 
+    # el segundo es el nombre del mensaje definido en la carpeta msg del proyecto
     pub = rospy.Publisher('mensaje', Frecuencias)
-    rospy.init_node('talker', anonymous=True, disable_signals=False)
-    rate = rospy.Rate(10000) # 10hz
+    rospy.init_node('talker', anonymous=True, disable_signals=False) # Inicializa el nodo
+    rate = rospy.Rate(10000) # 10hz # Define la velocidad de publicacion en ROS
 
+    # Publicara los mensajes mientras que no se apague la comunicacion
     while not rospy.is_shutdown():
         datos = []
         hello_str = "%s" % rospy.get_time()
         rospy.loginfo(hello_str)
         
-        obtenerDatos(datos)
-        #for i in range(14):
-        #    datos.append(np.random.random())
+        obtenerDatos(datos) # Obtiene los datos del Epoc
         
-        pub.publish(datos)
+        pub.publish(datos) # Publica el mensaje en ROS, el parametro debe ser del mismo tipo definido en el archivo de mensaje
         rate.sleep()
 
         
 if __name__ == '__main__':
-    headset = Emotiv()
+    
+    # Inicia la comunicacion con el Epoc por medio del Emokit
+    headset = Emotiv() 
     gevent.spawn(headset.setup)
     gevent.sleep(0)    
+    
     try:
         talker()
     except rospy.ROSInterruptException:

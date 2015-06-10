@@ -8,6 +8,7 @@ from GUI import *
 import sys
 from time import strftime
 from time import sleep
+import datetime
 
 class GUIForm(QtGui.QWidget):
  
@@ -26,6 +27,9 @@ class GUIForm(QtGui.QWidget):
         
         # Comienza a escuchar los mensajes en ROS
         self.listener()
+        self.tiempo_i = datetime.datetime.now()
+        self.tiempo_f = datetime.datetime.now()
+        self.ocurrencias = 0
 
         # Definición de los botones
         QtCore.QObject.connect(self.ui.botonEjecutar, QtCore.SIGNAL('clicked()'), self.habilitaGraficar)
@@ -36,6 +40,8 @@ class GUIForm(QtGui.QWidget):
         """ Habilita la graficación por medio de la bandera """
 
         self.grafica = True
+        self.tiempo_i = datetime.datetime.now()
+        self.ocurrencias = 0
 
     def graficar(self, frecuencias):
         """ Funcion que manda los datos a graficar """
@@ -76,6 +82,11 @@ class GUIForm(QtGui.QWidget):
         """ Detiene la graficación y genera el log """
 
         self.grafica = False
+        self.tiempo_f = datetime.datetime.now()
+        print 'tiempo_i: %s' % self.tiempo_i
+        print 'tiempo_f: %s' % self.tiempo_f
+        print 'diferencia: %s' % (self.tiempo_f - self.tiempo_i)
+        print 'Ocurrencias: ' + str(self.ocurrencias)
         self.generarLog()
 
     def pausaGraficar(self):
@@ -92,8 +103,7 @@ class GUIForm(QtGui.QWidget):
         if nombre:
             nombre = nombre + '_' + strftime("%d-%m-%y_%H:%M") + '.xls'
             file = open(nombre, 'w')
-            file.write('Señal 1, Señal 2, Señal 3, Señal 4, Señal 5, Señal 6, Señal 7,'
-                        ' Señal 8, Señal 9, Señal 10, Señal 11, Señal 12, Señal 13, Señal 14\n')
+            file.write('F3, FC5, AF3, F7, T7, P7, O1, O2, P8, T8, F8, AF4, FC6, F4\n')
             file.write(self.ui.textBrowser.toPlainText())
             self.ui.textBrowser.setPlainText("")
         else:
@@ -107,6 +117,7 @@ class GUIForm(QtGui.QWidget):
 
         if self.grafica:
             data = list(data.datos)
+            self.ocurrencias += 1
             
             # La lista frecuencias va encolando las señales en cada iteración
             # data contiene las 14 señales de la iteración actual
@@ -159,7 +170,11 @@ class GUIForm(QtGui.QWidget):
         """ Inicia la comunicacion ROS """
 
         rospy.init_node('listener', anonymous=True, disable_signals=False)
-        rospy.Subscriber("mensaje", Frecuencias, self.callback)
+
+        # Se suscribe a un mensaje de ROS, el primer parametro identifica al mensaje,
+        # el segundo es el nombre del mensaje definido en la carpeta msg del proyecto,
+        # el tercer parametro es la llamada al metodo callback que se encargara de estar leyendo siempre los mensajes
+        rospy.Subscriber("mensaje", Frecuencias, self.callback) 
 
 
 if __name__ == '__main__':
@@ -168,5 +183,3 @@ if __name__ == '__main__':
     myapp = GUIForm()
     myapp.show()
     sys.exit(app.exec_())
-    #rospy.signal_shutdown("Se presiono el boton detener")
-    #listener()

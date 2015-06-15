@@ -46,7 +46,7 @@ def talker():
     # el segundo es el nombre del mensaje definido en la carpeta msg del proyecto
     pub = rospy.Publisher('mensaje', Frecuencias)
     rospy.init_node('talker', anonymous=True, disable_signals=False) # Inicializa el nodo
-    rate = rospy.Rate(10000) # 10hz # Define la velocidad de publicacion en ROS
+    rate = rospy.Rate(10) # 10hz # Define la velocidad de publicacion en ROS
 
     # Publicara los mensajes mientras que no se apague la comunicacion
     while not rospy.is_shutdown():
